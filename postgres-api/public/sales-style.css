@@ -1,0 +1,195 @@
+.table {
+   background-color: white;
+   width: 100%;
+   max-width: 100%;
+   margin-bottom: 1rem;
+   overflow: auto;
+   /* Add overflow property for the scrollbar */
+}
+
+.table td {
+   text-align: center;
+   padding: .50rem;
+   width: 100%;
+   min-width: 120px;
+   vertical-align: top;
+   border-top: 1px solid #070707;
+   border-right: 1px solid #000000;
+
+}
+
+.table th {
+   background-color: #3498db; 
+   text-align: center;
+   width: 100%;
+   min-width: 120px;
+   border: 1px solid #ccc;
+   position: -webkit-sticky;
+   position: sticky;
+   top: 0;
+   padding: .75rem;
+   vertical-align: top;
+   border-top: 1px solid #eceeef;
+   background-color: #ffffff;
+   /* Background color for the sticky header */
+   z-index: 2;
+   border-right: 1px solid #eceeef;
+   /* Ensure the header is above other elements */
+}
+
+/* Remove right border for the last column in the header and data cells */
+.table th:last-child,
+.table td:last-child {
+   border-right: none;
+}
+
+.table thead th {
+   border-bottom: 2px solid #00aaff;
+}
+
+.table tbody+tbody {
+   border-top: 2px solid #eceeef;
+}
+
+/* Make the 2nd, 4th, 5th, 8th, and 11th columns and their data sticky */
+.table th:nth-child(2),
+.table td:nth-child(2),
+.table th:nth-child(4),
+.table td:nth-child(4),
+.table th:nth-child(5),
+.table td:nth-child(5),
+.table th:nth-child(8),
+.table td:nth-child(8),
+.table th:nth-child(10),
+.table td:nth-child(10) {
+   position: -webkit-sticky;
+   position: sticky;
+   background-color: #ffffff;
+   z-index: 1;
+}
+
+/* Set the left property for the 2nd column */
+.table th:nth-child(2),
+.table td:nth-child(2) {
+   left: 0;
+}
+
+/* Set the left property for the 4th column */
+.table th:nth-child(4),
+.table td:nth-child(4) {
+   left: 128px; 
+}
+
+/* Set the left property for the 5th column */
+.table th:nth-child(5),
+.table td:nth-child(5) {
+   left: 443px; 
+}
+
+/* Set the left property for the 8th column */
+.table th:nth-child(8),
+.table td:nth-child(8) {
+   left: 664px; 
+}
+
+/* Set the left property for the 11th column */
+.table th:nth-child(10),
+.table td:nth-child(10) {
+   left: 735px; 
+}
+
+/* Ensure the 2nd, 4th, 5th, 8th, and 11th column headers are above other sticky elements */
+.table thead th:nth-child(2),
+.table thead th:nth-child(4),
+.table thead th:nth-child(5),
+.table thead th:nth-child(8),
+.table thead th:nth-child(10) {
+   z-index: 3;
+}
+
+.table tbody+tbody {
+   border-top: 2px solid #eceeef;
+}
+
+.table .table {
+   background-color: #fff
+}
+
+#teamDataTable {
+   width: 100%;
+   overflow: auto;
+   position: sticky;
+   top: 0;
+   background-color: #fff;
+   z-index: 1;
+   overflow: auto;
+   /* Add this line to enable horizontal scroll */
+}
+
+.sidebar-mini {
+   width: 100%;
+   overflow: auto;
+}
+
+#teamDataTable thead {
+   white-space: nowrap;
+   min-width: 120px;
+   /* Adjust the minimum width as needed */
+}
+
+.fixed-column {
+   position: sticky;
+   left: 0;
+   background-color: #fff;
+   z-index: 2;
+}
+
+#orderCategoryFilter {
+   width: 180px;
+   padding-top: 10px;
+}
+
+#tableBody td {
+  width: 100px; /* Adjust the width of the columns as needed */
+}
+
+#teamDataTable th,
+#teamDataTable td {
+   white-space: nowrap;
+   min-width: 120px;
+   /* Adjust the minimum width as needed */
+}
+
+
+/* Adjust the width as needed */
+.fixed-column th:nth-child(2),
+.fixed-column td:nth-child(4),
+.fixed-column td:nth-child(10) {
+   width: 120px;
+}
+
+.fixed-column th:nth-child(3),
+.fixed-column td:nth-child(5),
+.fixed-column td:nth-child(11) {
+   width: 150px;
+}
+
+.past-due-row {
+   background-color: #c04646;
+   /* Red color */
+   color: #080808;
+   /* White text color for better contrast */
+}
+
+/* Additional styling for Order Category div */
+.orderCategory {
+   position: sticky;
+   left: 0;
+   z-index: 1;
+   background-color: #f9f9f9;
+   white-space: nowrap;
+   min-width: 120px;
+   padding: 8px;
+   text-align: center;
+   width: 125px;
+}

@@ -1,0 +1,45 @@
+//------------------------------------------------DELETE QUERIES--------------------------------------------------------------//
+app.delete("/api/completed/:oa_number/:item_code", async(req, res) => {
+    const oaNumber = req.params.oa_number;
+    const tableName = req.query.table_name; // Assuming the table name is passed as a query parameter
+
+    if (!tableName) {
+        return res.status(400).json({ error: "Table name is required" });
+    }
+
+    try {
+        console.log(
+            "Received DELETE request to remove quality data with OA number:",
+            oaNumber
+        );
+        console.log("Table name:", tableName);
+
+        const query = `
+      DELETE FROM ${tableName} 
+      WHERE oa_number = $1
+      RETURNING *
+    `;
+
+        console.log("Executing SQL query:", query);
+        console.log("With parameter:", oaNumber);
+
+        const result = await client.query(query, [oaNumber]);
+
+        if (result.rowCount === 0) {
+            res
+                .status(404)
+                .json({ message: "No record found with the specified OA number" });
+        } else {
+            console.log("Query executed successfully. Deleted rows:", result.rows);
+
+            res.json({
+                message: "Quality data deleted successfully",
+                deletedRows: result.rows,
+            });
+        }
+    } catch (error) {
+        console.error("Error deleting quality data:", error);
+        res.status(500).json({ error: "Internal server error" });
+    }
+});
+

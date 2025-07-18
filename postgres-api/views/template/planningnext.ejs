@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Fillow : Fillow Saas Admin  Bootstrap 5 Template" />
+    <meta property="og:title" content="Fillow : Fillow Saas Admin  Bootstrap 5 Template" />
+    <meta property="og:description" content="Fillow : Fillow Saas Admin  Bootstrap 5 Template" />
+    <meta property="og:image" content="https:/fillow.dexignlab.com/xhtml/social-image.png" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- PAGE TITLE HERE -->
+    <title>KVAR CLOUD</title>
+
+    <!-- FAVICONS ICON -->
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.png" />
+    <link href="/vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet" />
+    <link href="/vendor/owl-carousel/owl.carousel.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/vendor/nouislider/nouislider.min.css" />
+
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet">
+
+    <!-- themify -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/icon/themify-icons/themify-icons.css">
+
+    <!-- iconfont -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/icon/icofont/css/icofont.css">
+
+    <!-- simple line icon -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/icon/simple-line-icons/css/simple-line-icons.css">
+
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/plugins/bootstrap/css/bootstrap.min.css">
+
+    <!-- Chartlist chart css -->
+    <link rel="stylesheet" href="/static/assets/plugins/chartist/dist/chartist.css" type="text/css" media="all">
+
+    <!-- Weather css -->
+    <link href="/static/assets/css/svg-weather.css" rel="stylesheet">
+
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/main.css">
+
+    <!-- Responsive.css-->
+    <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css">
+
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/responsive.css">
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/team-style.css">
+
+
+    <!-- Style css -->
+    <link href="/css/style.css" rel="stylesheet" />
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+    <style>
+        .modal-dialog {
+            display: flex;
+            align-items: center;
+            min-height: calc(100% - 1rem);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="loader-bg">
+        <div class="loader-bar"></div>
+    </div> -->
+    <div class="wrapper">
+
+        <header class="main-header-top hidden-print">
+            <a href="/dashboard" class="logo"><img src="/static/assets/images/logo.png" alt="Theme-logo"
+                    style="width: 140px; height: 55px;"></a>
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
+                <ul class="top-nav lft-nav">
+                </ul>
+                <ul class="top-nav">
+                    <!--Notification Menu-->
+                    <!-- window screen -->
+                    <li class="pc-rheader-submenu">
+                        <a href="#!" class="drop icon-circle" onclick="javascript:toggleFullScreen()">
+                            <i class="icon-size-fullscreen"></i>
+                        </a>
+                    </li>
+                    <!-- User Menu-->
+                    <li class="dropdown">
+                        <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+                            class="dropdown-toggle drop icon-circle drop-image">
+                            <span id="username-placeholder">John Doe</span> <i class="icofont icofont-simple-down"></i>
+                        </a>
+                        <ul class="dropdown-menu settings-menu">
+                            <li><a href="/"><i class="icon-logout"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Side-Nav-->
+        <aside class="main-sidebar hidden-print ">
+            <section class="sidebar" id="sidebar-scroll">
+                <!-- Sidebar Menu-->
+                <ul class="sidebar-menu">
+                    <li class="nav-level">--- Navigation</li>
+                    <li class="active treeview">
+                        <a class="waves-effect waves-dark" href="/dashboard">
+                            <i class="icon-speedometer"></i><span> Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="treeview">
+                        <a class="waves-effect waves-dark" href="#"><i class="icon-list"></i><span> Table</span><i
+                                class="icon-arrow-down"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a class="waves-effect waves-dark" href="/team-table"><i
+                                        class="icon-arrow-right"></i>Team
+                                    Table</a></li>
+                            <!-- <li><a class="waves-effect waves-dark" href="/management-table"><i
+                                 class="icon-arrow-right"></i>Management Table</a></li> -->
+                            <li>
+                                <a class="waves-effect waves-dark" href="#"><i></i>Quality Table <i
+                                        class="icon-arrow-down"></i></a>
+                                <ul class="treeview-menu">
+                                    <li><a class="waves-effect waves-dark" href="/quality-table/edit"><i
+                                                class="icon-arrow-right"></i>Edit</a></li>
+                                    <li><a class="waves-effect waves-dark" href="/quality-table/view"><i
+                                                class="icon-arrow-right"></i>View</a></li>
+                                </ul>
+                            </li>
+            </section>
+        </aside>
+        <div class="content-wrapper">
+            <!-- Container-fluid starts -->
+            <div class="container-fluid">
+                <!-- Header Starts -->
+                <div class="row">
+                    <div class="col-sm-12 p-0">
+                        <div class="main-header">
+                            <h4>Edit Quality</h4>
+                            <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+                                <li class="breadcrumb-item"><a href="index.html"><i
+                                            class="icofont icofont-home"></i></a>
+                                </li>
+                                <li class="breadcrumb-item"><a href="#!">Table</a>
+                                </li>
+                                <li class="breadcrumb-item"><a href="quality.html">Quality</a>
+                                </li>
+                                <li class="breadcrumb-item"><a href="edit-quality.html">Edit</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--**********************************
+            Content body start
+        ***********************************-->
+                <style>
+                    #loadingSpinner {
+                        display: none;
+                        border: 8px solid #f3f3f3;
+                        border-top: 8px solid #3498db;
+                        border-radius: 50%;
+                        width: 40px;
+                        height: 40px;
+                        animation: spin 1s linear infinite;
+                        margin: 0 auto;
+                    }
+
+                    @keyframes spin {
+                        0% {
+                            transform: rotate(0deg);
+                        }
+
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    }
+                </style>
+                <div class="content-body">
+                    <div class="container-fluid">
+                        <div class="row">
+
+                            <div class="teamDataTableContainer">
+                                <div
+                                    style="display: flex; justify-content: center; align-items: center; padding: 20px;">
+                                    <table style="border-collapse: collapse; width: 100%; max-width: 1200px;">
+                                        <thead>
+                                            <tr>
+                                                <!-- <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Select</th> -->
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    Delivery Date</th>
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">OA
+                                                    Number</th>
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    Total OA Qty</th>
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    Dc.Qty</th>
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    Bal.Qty</th>
+                                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                        Item Code</th>
+                                                        <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                            Qty</th>
+                                                <!-- <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Inhouse</th> -->
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    Material Issue</th>
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    Assembly(Inhouse or Outsource) </th>
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    Visual Checking</th>
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    Testing</th>
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    Burn Test ON</th>
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    Burn Test OFF</th>
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    Final Testing</th>
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    Serial Number</th>
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    Fitting</th>
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    Packing</th>
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    Stores (Inhouse or Outsourced)</th>
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">QC
+                                                </th>
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    Total Time (Inhouse or Outsourced)</th>
+                                                <!-- <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Estimated Completion Date</th> -->
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tableBody">
+                                            <!-- Table rows will be dynamically added here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="mb-3 row">
+                                    <div class="col-xl-12 text-center">
+                                        <button type="add" class="btn btn-primary btn-sm"
+                                            style="width: 100%; max-width: 150px; border: 2px solid #007bff; margin: 20px auto; padding: 10px 20px;">
+                                            Add
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Static table with Worker, Assembly, QC, Testing, and Stores -->
+                            <div class="teamDataTableContainer">
+                                <div style="display: flex; justify-content: center; align-items: center; padding: 20px;">
+                                    <table style="border-collapse: collapse; width: 100%; max-width: 800px;">
+                                        <thead>
+                                            <tr>
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Worker</th>
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Full Day</th>
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Half Day</th>
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Absent</th>
+                                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Activity</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">1</td>
+                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    <input type="checkbox">
+                                                </td>
+                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    <input type="checkbox">
+                                                </td>
+                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    <input type="checkbox">
+                                                </td>
+                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    <select>
+                                                        <option value="none">Select Activity</option>
+                                                        <option value="assembly">Assembly</option>
+                                                        <option value="inspection">Inspection</option>
+                                                        <option value="packing">Packing</option>
+                                                        <option value="testing">Testing</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">2</td>
+                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    <input type="checkbox">
+                                                </td>
+                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    <input type="checkbox">
+                                                </td>
+                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    <input type="checkbox">
+                                                </td>
+                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    <select>
+                                                        <option value="none">Select Activity</option>
+                                                        <option value="assembly">Assembly</option>
+                                                        <option value="inspection">Inspection</option>
+                                                        <option value="packing">Packing</option>
+                                                        <option value="testing">Testing</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    <input type="checkbox">
+                                                </td>
+                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    <input type="checkbox">
+                                                </td>
+                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    <input type="checkbox">
+                                                </td>
+                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    <select>
+                                                        <option value="none">Select Activity</option>
+                                                        <option value="assembly">Assembly</option>
+                                                        <option value="inspection">Inspection</option>
+                                                        <option value="packing">Packing</option>
+                                                        <option value="testing">Testing</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    <input type="checkbox">
+                                                </td>
+                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    <input type="checkbox">
+                                                </td>
+                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    <input type="checkbox">
+                                                </td>
+                                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                                    <select>
+                                                        <option value="none">Select Activity</option>
+                                                        <option value="assembly">Assembly</option>
+                                                        <option value="qc">QC</option>
+                                                        <option value="packing">Packing</option>
+                                                        <option value="testing">Testing</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        const form = document.getElementById("dateRangeForm");
+
+                        form.addEventListener("submit", function (event) {
+                            event.preventDefault(); // Prevent default form submission
+
+                            // Call the function to populate the table
+                            fetchAndPopulateTable();
+                        });
+                    });
+
+                    window.addEventListener("load", function () {
+                        // Call the fetchAndPopulateTable function with a default or specific category
+                        fetchAndPopulateTable(); // Replace "defaultCategory" with the desired default category or an empty string if not needed
+                    });
+
+                    async function fetchAndPopulateTable(selectedCategory) {
+                        if (selectedCategory === "New R&D") {
+                            selectedCategory = "New";
+                        }
+
+                        try {
+                            const apiUrl = selectedCategory
+                                ? `http://192.168.131.92:3002/api/filter/planning?category=${selectedCategory}`
+                                : "http://60.254.18.10:3002/api/planning";
+
+                            const response = await fetch(apiUrl);
+                            const data = await response.json();
+
+                            if (response.ok) {
+                                const tableBody = document.getElementById("tableBody");
+                                tableBody.innerHTML = ""; // Clearing the table body
+
+                                // Sort data.rows by del_date in ascending order
+                                data.rows.sort((a, b) => new Date(a.del_date) - new Date(b.del_date));
+
+                                let pastDueRowCount = 0;
+                                data.rows.forEach((row) => {
+                                    // Skip rows where row.report_status is "DETAIL" and where row.selected is not true
+                                    if (row.report_status !== "DETAIL" || !row.selected) {
+                                        return;
+                                    }
+
+                                    const tableRow = document.createElement("tr");
+
+                                    // Check if the delivery_date has passed and apply the appropriate class
+                                    const currentDate = new Date();
+                                    formatDate(currentDate);
+                                    formatDatedb(row.del_date);
+                                    let rowColorClass;
+
+                                    tableRow.className = rowColorClass || ""; // If no past-due condition, set class to empty string
+                                    tableRow.innerHTML = `
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${formatDate(row.del_date)}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${row.oa_number}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${row.total_oa_qty || ""}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${row.dc_qty || ""}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${row.bal_qty || ""}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${row.item_code || ""}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${row.qty || ""}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${row.material_issue || ""}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${row.assembly_inhouse || ""}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${row.visual_checking || ""}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${row.testing || ""}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${row.burn_test_on || ""}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${row.burn_test_off || ""}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${row.final_testing || ""}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${row.serial_no || ""}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${row.fitting || ""}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${row.packing || ""}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${row.stores_inhouse || ""}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${row.qc || ""}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" class="inhouseTime">${row.total_time_inhouse || ""}</td>
+                `;
+                                    tableBody.appendChild(tableRow);
+
+                                    // Update the count for rows where selected is true
+                                    pastDueRowCount++;
+                                });
+
+                                // Update the count in the HTML element with the ID 'countValue'
+                                document.getElementById("countValue").innerHTML = pastDueRowCount;
+                            } else {
+                                console.error("Error fetching data:", data.error);
+                            }
+                        } catch (error) {
+                            console.error("Error fetching team data:", error.message);
+                        }
+                    }
+
+                    // Helper functions for date formatting
+                    let year, month, day;
+
+                    function formatDate(dateString) {
+                        if (!dateString) return ""; // Return empty string for null or undefined dates
+                        const date = new Date(dateString);
+                        day = date.getDate().toString().padStart(2, "0");
+                        month = (date.getMonth() + 1).toString().padStart(2, "0");
+                        year = date.getFullYear();
+                        return `${day}-${month}-${year}`;
+                    }
+
+                    let yeardb, monthdb, daydb;
+
+                    function formatDatedb(dateString) {
+                        if (!dateString) return ""; // Return empty string for null or undefined dates
+                        const date = new Date(dateString);
+                        daydb = date.getDate().toString().padStart(2, "0");
+                        monthdb = (date.getMonth() + 1).toString().padStart(2, "0");
+                        yeardb = date.getFullYear();
+                        return `${daydb}-${monthdb}-${yeardb}`;
+                    }
+
+                </script>
+            </div>
+
+            <!-- <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    var form = document.querySelector("#companyRegistrationForm");
+
+                    form.addEventListener("submit", function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                            form.classList.add("was-validated");
+                        }
+                    });
+                });
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    // Get all rows in the static table
+                    const rows = document.querySelectorAll("tbody tr");
+
+                    rows.forEach(row => {
+                        // Get all checkboxes in the current row
+                        const checkboxes = row.querySelectorAll("input[type='checkbox']");
+
+                        checkboxes.forEach(checkbox => {
+                            checkbox.addEventListener("change", function () {
+                                // If the current checkbox is checked, uncheck all other checkboxes in the row
+                                if (this.checked) {
+                                    checkboxes.forEach(cb => {
+                                        if (cb !== this) {
+                                            cb.checked = false; // Uncheck other checkboxes
+                                        }
+                                    });
+                                }
+                            });
+                        });
+                    });
+                });
+            </script> -->
+
+            <!--**********************************
+            Content body end
+        ***********************************-->
+            <!--**********************************
+            Footer start
+        ***********************************-->
+            <div class="footer">
+                <div class="copyright">
+                    <p>
+                        Copyright © Designed &amp; Developed by
+                        <a href="https://kvartech.in/" target="_blank">KVAR Tech</a> 2023
+                    </p>
+                </div>
+            </div>
+            <!--**********************************
+            Footer end
+        ***********************************-->
+        </div>
+        <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+        <!--**********************************
+        Scripts
+    ***********************************-->
+        <!-- Required vendors -->
+        <script src="/vendor/global/global.min.js"></script>
+        <script src="/vendor/chart.js/Chart.bundle.min.js"></script>
+        <script src="/vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+
+        <!-- Apex Chart -->
+        <script src="/vendor/apexchart/apexchart.js"></script>
+
+        <script src="/vendor/chart.js/Chart.bundle.min.js"></script>
+
+        <!-- Chart piety plugin files -->
+        <script src="/vendor/peity/jquery.peity.min.js"></script>
+        <!-- Dashboard 1 -->
+        <script src="/js/dashboard/dashboard-1.js"></script>
+
+        <script src="/vendor/owl-carousel/owl.carousel.js"></script>
+
+        <script src="/js/custom.min.js"></script>
+        <script src="/js/dlabnav-init.js"></script>
+        <script src="/js/demo.js"></script>
+        <script src="/js/styleSwitcher.js"></script>
+
+        <script src="/static/assets/plugins/jquery/dist/jquery.min.js"></script>
+        <script src="/static/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+        <script src="/static/assets/plugins/tether/dist/js/tether.min.js"></script>
+        <script src="/static/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/static/assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+        <script src="/static/assets/plugins/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+        <script src="/static/assets/plugins/classie/classie.js"></script>
+        <script src="/static/assets/plugins/notification/js/bootstrap-growl.min.js"></script>
+        <script src="/static/assets/plugins/jquery-sparkline/dist/jquery.sparkline.js"></script>
+        <script src="/static/assets/plugins/waypoints/jquery.waypoints.min.js"></script>
+        <script src="/static/assets/plugins/countdown/js/jquery.counterup.js"></script>
+        <script src="/static/assets/plugins/charts/echarts/js/echarts-all.js"></script>
+        <script src="/static/assets/plugins/todo/js/todo.js"></script>
+        <script src="/static/assets/pages/dashboard.js"></script>
+        <script src="/static/assets/js/main.min.js"></script>
+        <script src="/static/assets/js/menu.min.js"></script>
+        <script src="/static/assets/js/custom.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <!-- Flatpickr JS -->
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/index.js"></script>
+</body>
+
+</html>

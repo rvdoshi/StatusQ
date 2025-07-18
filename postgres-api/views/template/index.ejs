@@ -1,0 +1,417 @@
+<!-- LIVE FILE IN USE-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>STATUSQ</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet">
+
+    <!-- themify -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/icon/themify-icons/themify-icons.css">
+
+    <!-- iconfont -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/icon/icofont/css/icofont.css">
+
+    <!-- simple line icon -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/icon/simple-line-icons/css/simple-line-icons.css">
+
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/plugins/bootstrap/css/bootstrap.min.css">
+
+    <!-- Chartlist chart css -->
+    <link rel="stylesheet" href="/static/assets/plugins/chartist/dist/chartist.css" type="text/css" media="all">
+
+    <!-- Weather css -->
+    <link href="/static/assets/css/svg-weather.css" rel="stylesheet">
+
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/main.css">
+
+    <!-- Responsive.css-->
+    <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css">
+
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/responsive.css">
+
+    <link rel="stylesheet" href="/static/assets/css/color/date-time.css">
+
+</head>
+
+<body class="sidebar-mini fixed">
+    <div class="loader-bg">
+        <div class="loader-bar">
+        </div>
+    </div>
+    <div class="wrapper">
+        <!-- Navbar-->
+        <header class="main-header-top hidden-print">
+            <a href="/dashboard" class="logo">
+                <img src="/static/assets/images/logo.png" alt="Theme-logo" style="width: 140px; height: 55px;">
+            </a>
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
+                <ul class="top-nav lft-nav">
+                    <li class="dropdown pc-rheader-submenu message-notification search-toggle"></li>
+                </ul>
+
+
+                <ul class="top-nav">
+                    <li class="navbar-status" style="flex: 1; text-align: center; margin-right: 500px;">
+                        <a class="status-link" style="font-size: 30px;">STATUSQ</a>
+                    </li>
+                    <!--Notification Menu-->
+                    <li class="pc-rheader-submenu">
+                        <a href="#!" class="drop icon-circle" onclick="javascript:toggleFullScreen()">
+                            <i class="icon-size-fullscreen"></i>
+                        </a>
+                    </li>
+
+                    <!-- User Menu-->
+                    <li class="dropdown">
+                        <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
+                            <span id="username-placeholder">John Doe</span> <i class="icofont icofont-simple-down"></i>
+                        </a>
+                        <ul class="dropdown-menu settings-menu">
+                            <li><a href="/"><i class="icon-logout"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                    <!-- New Item -->
+
+                </ul>
+                <span class="morphsearch-close"><i class="icofont icofont-search-alt-1"></i></span>
+            </nav>
+        </header>
+
+        <aside class="main-sidebar hidden-print ">
+            <section class="sidebar" id="sidebar-scroll">
+                <ul class="sidebar-menu">
+                    <li class="nav-level">--- Navigation</li>
+                    <li class="active treeview">
+                        <a class="waves-effect waves-dark" href="/dashboard">
+                            <i class="icon-speedometer"></i><span> Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="treeview">
+                        <a class="waves-effect waves-dark" href="#"><i class="icon-list"></i><span> Menu</span><i
+                                class="icon-arrow-down"></i></a>
+                        <ul class="treeview-menu">
+
+                            <!-- Planning Tree -->
+                            <!-- <li>
+                                <a class="waves-effect waves-dark" href="#"><i></i>Plannings <i
+                                        class="icon-arrow-down"></i></a>
+                                <ul class="treeview-menu">
+                                    <li><a class="waves-effect waves-dark" href="/daily-planning"><i
+                                                class="icon-arrow-right"></i>Daily Planning</a></li>
+                                    <li><a class="waves-effect waves-dark" href="/team-table"><i
+                                                class="icon-arrow-right"></i>Team Planning</a></li>
+                                </ul>
+                            </li> -->
+
+                            <!-- Orders Tree -->
+                            <li>
+                                <a class="waves-effect waves-dark" href="#"><i></i>Orders <i
+                                        class="icon-arrow-down"></i></a>
+                                <ul class="treeview-menu">
+                                    <li><a class="waves-effect waves-dark" href="/completed-table"><i
+                                                class="icon-arrow-right"></i>Completed Orders</a></li>
+                                    <li><a class="waves-effect waves-dark" href="/late-table"><i
+                                                class="icon-arrow-right"></i>Late Orders</a></li>
+                                    <li><a class="waves-effect waves-dark" href="/team-table"><i
+                                                    class="icon-arrow-right"></i>Team Orders</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Enter Employee -->
+                            <!-- <li><a class="waves-effect waves-dark" href="/employee"><i
+                                        class="icon-arrow-right"></i>Enter Employee</a></li> -->
+
+                            <!-- Departments Tree -->
+                            <li>
+                                <a class="waves-effect waves-dark" href="#"><i></i>Departments <i
+                                        class="icon-arrow-down"></i></a>
+                                <ul class="treeview-menu">
+                                    <li>
+                                        <a class="waves-effect waves-dark" href="#"><i></i>Sales <i
+                                                class="icon-arrow-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li><a class="waves-effect waves-dark" href="/sales-table/edit-sales"><i
+                                                        class="icon-arrow-right"></i>Edit</a></li>
+                                            <li><a class="waves-effect waves-dark" href="/sales-table/sales-table"><i
+                                                        class="icon-arrow-right"></i>View</a></li>
+                                        </ul>
+                                    </li>
+
+
+                                    <li>
+                                        <a class="waves-effect waves-dark" href="#"><i></i>Purchase <i
+                                                class="icon-arrow-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li><a class="waves-effect waves-dark" href="/purchase-table/edit-purchase"><i
+                                                        class="icon-arrow-right"></i>Edit</a></li>
+                                            <li><a class="waves-effect waves-dark" href="/purchase-table/purchase-table"><i
+                                                        class="icon-arrow-right"></i>View</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <a class="waves-effect waves-dark" href="#"><i></i>Stores <i
+                                                class="icon-arrow-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li><a class="waves-effect waves-dark" href="/stores-table/edit-stores"><i
+                                                        class="icon-arrow-right"></i>Edit</a></li>
+                                            <li><a class="waves-effect waves-dark" href="/stores-table/stores-table"><i
+                                                        class="icon-arrow-right"></i>View</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <a class="waves-effect waves-dark" href="#"><i></i>R&D <i
+                                                class="icon-arrow-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li><a class="waves-effect waves-dark" href="/rnd-table/edit-rnd"><i
+                                                        class="icon-arrow-right"></i>Edit</a></li>
+                                            <li><a class="waves-effect waves-dark" href="/rnd-table/rnd-table"><i
+                                                        class="icon-arrow-right"></i>View</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <a class="waves-effect waves-dark" href="#"><i></i>Production <i
+                                                class="icon-arrow-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li><a class="waves-effect waves-dark" href="/production-table/edit-production"><i
+                                                        class="icon-arrow-right"></i>Edit</a></li>
+                                            <li><a class="waves-effect waves-dark" href="/production-table/production-table"><i
+                                                        class="icon-arrow-right"></i>View</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <a class="waves-effect waves-dark" href="#"><i></i>Quality <i
+                                                class="icon-arrow-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li><a class="waves-effect waves-dark" href="/quality-table/edit-quality"><i
+                                                        class="icon-arrow-right"></i>Edit</a></li>
+                                            <li><a class="waves-effect waves-dark" href="/quality-table/quality-table"><i
+                                                        class="icon-arrow-right"></i>View</a></li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <a class="waves-effect waves-dark" href="#"><i></i>Accounts <i
+                                                class="icon-arrow-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li><a class="waves-effect waves-dark" href="/accounts-table/edit-accounts"><i
+                                                        class="icon-arrow-right"></i>Edit</a></li>
+                                            <li><a class="waves-effect waves-dark" href="/accounts-table/accounts-table"><i
+                                                        class="icon-arrow-right"></i>View</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a class="waves-effect waves-dark" href="#"><i></i>Management <i
+                                                class="icon-arrow-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li><a class="waves-effect waves-dark" href="/management"><i
+                                                        class="icon-arrow-right"></i>Edit</a></li>
+                                            <!-- <li><a class="waves-effect waves-dark" href="/accounts-table/accounts-table"><i
+                                                        class="icon-arrow-right"></i>View</a></li> -->
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a class="waves-effect waves-dark" href="#"><i></i>Reports <i
+                                                class="icon-arrow-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li><a class="waves-effect waves-dark" href="/delay-report"><i
+                                                        class="icon-arrow-right"></i>Delay Report</a></li>
+                                            <!-- <li><a class="waves-effect waves-dark" href="/accounts-table/accounts-table"><i
+                                                        class="icon-arrow-right"></i>View</a></li> -->
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- <input type="file" id="excelFile" />
+                    <button id="uploadButton">Upload and Send Data</button> -->
+            </section>
+        </aside>
+
+
+
+
+        <div class="content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="main-header">
+                        <h4>Dashboard</h4>
+                    </div>
+                </div>
+
+                <!-- New Container with Date Selector -->
+                <div class="row mt-4">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-header-text">Date Selector</h5>
+                            </div>
+                            <div class="card-block">
+                                <div class="date-selector d-flex align-items-center justify-content-center">
+                                    <label for="from-date" class="me-2">From Date:</label>
+                                    <input type="date" id="from-date" name="from-date" class="form-control me-4" style="max-width: 200px;">
+
+                                    <label for="to-date" class="me-2">To Date:</label>
+                                    <input type="date" id="to-date" name="to-date" class="form-control" style="max-width: 200px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 4-blocks row start -->
+                <div class="row dashboard-header">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card dashboard-product">
+                            <span>Late Orders</span>
+                            <h2 id="pastDueOrderCount">
+                                <span id="countValuerow"></span>
+                            </h2>
+                            <div class="side-box"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card dashboard-product">
+                            <span>Open Orders</span>
+                            <h2 id="openOrderCount">
+                                <span id="openOrderValue"></span>
+                            </h2>
+                            <div class="side-box"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card dashboard-product">
+                            <span>Late Orders Balance Amount</span>
+                            <h2 class="pendingbalanceamount">
+                                <span id="totalbalancePendingOrders"></span>
+                            </h2>
+                            <div class="side-box"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card dashboard-product">
+                            <span>Total Balance Amount</span>
+                            <h2 id="totalbalanceamount">
+                                <span id="totalbalance"></span>
+                            </h2>
+                            <div class="side-box"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row with Bar chart and Pie chart -->
+                <div class="row">
+                    <!-- Bar Chart -->
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-header-text">Bar chart</h5>
+                            </div>
+                            <div class="card-block">
+                                <div id="barchart" style="min-width: 350px; height: 330px;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pie Chart (adjusted size) -->
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-header-text">Pie chart</h5>
+                            </div>
+                            <div class="card-block">
+                                <div id="piechart" style="min-width: 150px; height: 330px; margin: 0 auto;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Required Jqurey -->
+    <script src="/static/assets/plugins/Jquery/dist/jquery.min.js"></script>
+    <script src="/static/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="/static/assets/plugins/tether/dist/js/tether.min.js"></script>
+
+    <!-- Required Fremwork -->
+    <script src="/static/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Scrollbar JS-->
+    <script src="/static/assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="/static/assets/plugins/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+
+    <!--classic JS-->
+    <script src="/static/assets/plugins/classie/classie.js"></script>
+
+    <!-- notification -->
+    <script src="/static/assets/plugins/notification/js/bootstrap-growl.min.js"></script>
+
+    <!-- Sparkline charts -->
+    <script src="/static/assets/plugins/jquery-sparkline/dist/jquery.sparkline.js"></script>
+
+    <!-- Counter js  -->
+    <script src="/static/assets/plugins/waypoints/jquery.waypoints.min.js"></script>
+    <script src="/static/assets/plugins/countdown/js/jquery.counterup.js"></script>
+
+    <!-- Echart js -->
+    <script src="/static/assets/plugins/charts/echarts/js/echarts-all.js"></script>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+
+    <!-- custom js -->
+    <script type="text/javascript" src="/static/assets/js/main.min.js"></script>
+    <script type="text/javascript" src="/static/assets/pages/dashboard.js"></script>
+    <script type="text/javascript" src="/static/assets/pages/elements.js"></script>
+    <script src="/static/index-script.js"></script>
+    <script src="/static/table-script.js"></script>
+    <script src="/static/assets/js/menu.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: '/api/user',
+                method: 'GET',
+                success: function(data) {
+                    // console.log('AJAX request successful:', data.name);
+                    $('#username-placeholder').text(data.name);
+                },
+                error: function(err) {
+                    console.log('Error fetching user data:', err);
+                }
+            });
+        });
+    </script>
+
+    <!-- Highcharts JS library for piechart-->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+
+    <script>
+    </script>
+</body>
+
+</html>

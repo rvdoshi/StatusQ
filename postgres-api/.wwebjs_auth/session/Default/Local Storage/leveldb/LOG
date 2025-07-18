@@ -1,0 +1,57 @@
+2025/07/10-01:33:32.285 2c3c Reusing MANIFEST C:\Users\admin\Desktop\quantam-lite\quantam-lite\postgres-api\.wwebjs_auth\session\Default\Local Storage\leveldb/MANIFEST-000001
+2025/07/10-01:33:32.293 2c3c Recovering log #177
+2025/07/10-01:33:32.293 2c3c Reusing old log C:\Users\admin\Desktop\quantam-lite\quantam-lite\postgres-api\.wwebjs_auth\session\Default\Local Storage\leveldb/000177.log 
+2025/07/10-03:13:47.462 1f04 Level-0 table #181: started
+2025/07/10-03:13:47.470 1f04 Level-0 table #181: 12742 bytes OK
+2025/07/10-03:13:47.472 1f04 Delete type=0 #177
+2025/07/10-03:13:47.482 1f04 Compacting 4@0 + 1@1 files
+2025/07/10-03:13:47.484 1f04 Generated table #182@0: 111 keys, 5968 bytes
+2025/07/10-03:13:47.484 1f04 Compacted 4@0 + 1@1 files => 5968 bytes
+2025/07/10-03:13:47.485 1f04 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/07/10-03:13:47.485 1f04 Delete type=2 #171
+2025/07/10-03:13:47.485 1f04 Delete type=2 #173
+2025/07/10-03:13:47.485 1f04 Delete type=2 #175
+2025/07/10-03:13:47.485 1f04 Delete type=2 #178
+2025/07/10-03:13:47.485 1f04 Delete type=2 #181
+2025/07/10-12:34:18.808 2b9c Level-0 table #184: started
+2025/07/10-12:34:18.814 2b9c Level-0 table #184: 11240 bytes OK
+2025/07/10-12:34:18.816 2b9c Delete type=0 #180
+2025/07/10-14:26:47.959 2ef8 Level-0 table #186: started
+2025/07/10-14:26:47.965 2ef8 Level-0 table #186: 12466 bytes OK
+2025/07/10-14:26:47.966 2ef8 Delete type=0 #183
+2025/07/11-05:45:14.098 150c Level-0 table #188: started
+2025/07/11-05:45:14.106 150c Level-0 table #188: 11995 bytes OK
+2025/07/11-05:45:14.108 150c Delete type=0 #185
+2025/07/11-20:15:57.710 2bf8 Level-0 table #190: started
+2025/07/11-20:15:57.716 2bf8 Level-0 table #190: 11075 bytes OK
+2025/07/11-20:15:57.717 2bf8 Delete type=0 #187
+2025/07/11-20:15:57.726 2bf8 Compacting 4@0 + 1@1 files
+2025/07/11-20:15:57.728 2bf8 Generated table #191@0: 111 keys, 5511 bytes
+2025/07/11-20:15:57.728 2bf8 Compacted 4@0 + 1@1 files => 5511 bytes
+2025/07/11-20:15:57.729 2bf8 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/07/11-20:15:57.729 2bf8 Delete type=2 #182
+2025/07/11-20:15:57.729 2bf8 Delete type=2 #184
+2025/07/11-20:15:57.729 2bf8 Delete type=2 #186
+2025/07/11-20:15:57.729 2bf8 Delete type=2 #188
+2025/07/11-20:15:57.729 2bf8 Delete type=2 #190
+2025/07/12-08:36:37.888 2118 Level-0 table #193: started
+2025/07/12-08:36:37.894 2118 Level-0 table #193: 11341 bytes OK
+2025/07/12-08:36:37.895 2118 Delete type=0 #189
+2025/07/13-08:32:48.545 1b94 Level-0 table #195: started
+2025/07/13-08:32:48.552 1b94 Level-0 table #195: 10803 bytes OK
+2025/07/13-08:32:48.553 1b94 Delete type=0 #192
+2025/07/13-22:08:35.553 2fc0 Level-0 table #197: started
+2025/07/13-22:08:35.561 2fc0 Level-0 table #197: 10950 bytes OK
+2025/07/13-22:08:35.563 2fc0 Delete type=0 #194
+2025/07/14-11:09:17.979 948 Level-0 table #199: started
+2025/07/14-11:09:17.984 948 Level-0 table #199: 10885 bytes OK
+2025/07/14-11:09:17.986 948 Delete type=0 #196
+2025/07/14-11:09:17.997 948 Compacting 4@0 + 1@1 files
+2025/07/14-11:09:17.999 948 Generated table #200@0: 111 keys, 5510 bytes
+2025/07/14-11:09:17.999 948 Compacted 4@0 + 1@1 files => 5510 bytes
+2025/07/14-11:09:18.000 948 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/07/14-11:09:18.000 948 Delete type=2 #191
+2025/07/14-11:09:18.000 948 Delete type=2 #193
+2025/07/14-11:09:18.000 948 Delete type=2 #195
+2025/07/14-11:09:18.000 948 Delete type=2 #197
+2025/07/14-11:09:18.000 948 Delete type=2 #199

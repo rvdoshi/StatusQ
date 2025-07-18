@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Fillow : Fillow Saas Admin  Bootstrap 5 Template" />
+    <meta property="og:title" content="Fillow : Fillow Saas Admin  Bootstrap 5 Template" />
+    <meta property="og:description" content="Fillow : Fillow Saas Admin  Bootstrap 5 Template" />
+    <meta property="og:image" content="https:/fillow.dexignlab.com/xhtml/social-image.png" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- PAGE TITLE HERE -->
+    <title>KVAR CLOUD</title>
+
+    <!-- FAVICONS ICON -->
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.png" />
+    <link href="/vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet" />
+    <link href="/vendor/owl-carousel/owl.carousel.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/vendor/nouislider/nouislider.min.css" />
+
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet">
+
+    <!-- themify -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/icon/themify-icons/themify-icons.css">
+
+    <!-- iconfont -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/icon/icofont/css/icofont.css">
+
+    <!-- simple line icon -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/icon/simple-line-icons/css/simple-line-icons.css">
+
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/plugins/bootstrap/css/bootstrap.min.css">
+
+    <!-- Chartlist chart css -->
+    <link rel="stylesheet" href="/static/assets/plugins/chartist/dist/chartist.css" type="text/css" media="all">
+
+    <!-- Weather css -->
+    <link href="/static/assets/css/svg-weather.css" rel="stylesheet">
+
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/main.css">
+
+    <!-- Responsive.css-->
+    <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css">
+
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/responsive.css">
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/team-style.css">
+
+
+    <!-- Style css -->
+    <link href="/css/style.css" rel="stylesheet" />
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+    <style>
+        .modal-dialog {
+            display: flex;
+            align-items: center;
+            min-height: calc(100% - 1rem);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="loader-bg">
+        <div class="loader-bar"></div>
+    </div> -->
+    <div class="wrapper">
+
+        <header class="main-header-top hidden-print">
+            <a href="/dashboard" class="logo"><img src="/static/assets/images/logo.png" alt="Theme-logo"
+                    style="width: 140px; height: 55px;"></a>
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
+                <ul class="top-nav lft-nav">
+                </ul>
+                <ul class="top-nav">
+                    <!--Notification Menu-->
+                    <!-- window screen -->
+                    <li class="pc-rheader-submenu">
+                        <a href="#!" class="drop icon-circle" onclick="javascript:toggleFullScreen()">
+                            <i class="icon-size-fullscreen"></i>
+                        </a>
+                    </li>
+                    <!-- User Menu-->
+                    <li class="dropdown">
+                        <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+                            class="dropdown-toggle drop icon-circle drop-image">
+                            <span id="username-placeholder">John Doe</span> <i class="icofont icofont-simple-down"></i>
+                        </a>
+                        <ul class="dropdown-menu settings-menu">
+                            <li><a href="/"><i class="icon-logout"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Side-Nav-->
+        <aside class="main-sidebar hidden-print ">
+            <section class="sidebar" id="sidebar-scroll">
+                <!-- Sidebar Menu-->
+                <ul class="sidebar-menu">
+                    <li class="nav-level">--- Navigation</li>
+                    <li class="active treeview">
+                        <a class="waves-effect waves-dark" href="/dashboard">
+                            <i class="icon-speedometer"></i><span> Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="treeview">
+                        <a class="waves-effect waves-dark" href="#"><i class="icon-list"></i><span> Table</span><i
+                                class="icon-arrow-down"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a class="waves-effect waves-dark" href="/team-table"><i
+                                        class="icon-arrow-right"></i>Team
+                                    Table</a></li>
+                            <!-- <li><a class="waves-effect waves-dark" href="/management-table"><i
+                                 class="icon-arrow-right"></i>Management Table</a></li> -->
+                            <li>
+                                <a class="waves-effect waves-dark" href="#"><i></i>Quality Table <i
+                                        class="icon-arrow-down"></i></a>
+                                <ul class="treeview-menu">
+                                    <li><a class="waves-effect waves-dark" href="/quality-table/edit"><i
+                                                class="icon-arrow-right"></i>Edit</a></li>
+                                    <li><a class="waves-effect waves-dark" href="/quality-table/view"><i
+                                                class="icon-arrow-right"></i>View</a></li>
+                                </ul>
+                            </li>
+            </section>
+        </aside>
+        <div class="content-wrapper">
+            <!-- Container-fluid starts -->
+            <div class="container-fluid">
+                <!-- Header Starts -->
+                <div class="row">
+                    <div class="col-sm-12 p-0">
+                        <div class="main-header">
+                            <h4>Edit Quality</h4>
+                            <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+                                <li class="breadcrumb-item"><a href="index.html"><i
+                                            class="icofont icofont-home"></i></a>
+                                </li>
+                                <li class="breadcrumb-item"><a href="#!">Table</a>
+                                </li>
+                                <li class="breadcrumb-item"><a href="quality.html">Quality</a>
+                                </li>
+                                <li class="breadcrumb-item"><a href="edit-quality.html">Edit</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--**********************************
+            Content body start
+        ***********************************-->
+                <style>
+                    #loadingSpinner {
+                        display: none;
+                        border: 8px solid #f3f3f3;
+                        border-top: 8px solid #3498db;
+                        border-radius: 50%;
+                        width: 40px;
+                        height: 40px;
+                        animation: spin 1s linear infinite;
+                        margin: 0 auto;
+                    }
+
+                    @keyframes spin {
+                        0% {
+                            transform: rotate(0deg);
+                        }
+
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    }
+                </style>
+                <div class="content-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Monthly Planning</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-validation">
+                                            <form id="dateRangeForm">
+                                                <div class="row">
+                                                    <div class="col-xl-6">
+
+                                                        <div class="mb-3 row">
+                                                            <label class="col-lg-4 col-form-label"
+                                                                for="fromDate"><strong>From Date:</strong></label>
+                                                            <div class="col-lg-8">
+                                                                <input type="date" class="form-control" id="fromDate"
+                                                                    name="fromDate" required
+                                                                    style="width: 50%; margin: 10px;" />
+                                                                <div class="invalid-feedback">
+                                                                    <!-- Please select a start date. -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <!-- Right Column -->
+                                                    <div class="col-xl-6">
+                                                        <div class="mb-3 row">
+                                                            <label class="col-lg-4 col-form-label"
+                                                                for="toDate"><strong>To Date:</strong></label>
+                                                            <div class="col-lg-8">
+                                                                <input type="date" class="form-control" id="toDate"
+                                                                    name="toDate" required
+                                                                    style="width: 50%; margin: 10px;" />
+                                                                <!-- <div class="invalid-feedback">
+                                                                Please select an end date.
+                                                            </div> -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <script>
+                                                        document.addEventListener("DOMContentLoaded", function () {
+                                                            var today = new Date().toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
+                                                            document.getElementById("toDate").value = today; // Set the value of the "To Date" input field
+                                                        });
+                                                    </script>
+                                                </div>
+                                                <br />
+                                                <div class="mb-3 row">
+                                                    <div class="col-xl-12 text-center">
+                                                        <button type="submit" class="btn btn-primary btn-sm"
+                                                            style="width: 100%; max-width: 150px; border: 2px solid #007bff; margin: 20px auto; padding: 10px 20px;">
+                                                            Submit
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                            </form>
+
+                                        </div>
+                                        <!-- Table Added After the Submit Button -->
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="totalTime" class="total-time"
+                        style="display: flex; justify-content: center; align-items: center; gap: 20px; margin-left: auto; margin-right: auto;">
+                        <strong>Total Inhouse Time:</strong> <span id="totalInhouseTime">0</span>
+                        <strong>Total Outsource Time:</strong> <span id="totalOutsourceTime">0</span>
+                    </div>
+
+
+                </div>
+                <div class="teamDataTableContainer">
+                    <div style="display: flex; justify-content: center; align-items: center; padding: 20px;">
+                        <table style="border-collapse: collapse; width: 100%; max-width: 1200px;">
+                            <thead>
+                                <tr>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Select</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Delivery Date
+                                    </th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">OA Number</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Bal.Qty</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Adjusted.Qty
+                                    </th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Inhouse</th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Inhouse Time
+                                    </th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Outsource Time
+                                    </th>
+                                    <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Estimated
+                                        Completion Date</th> <!-- New header -->
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                                <!-- Table rows will be dynamically added here -->
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="mb-3 row">
+                <div class="col-xl-12 text-center">
+                    <button id="addButton" type="button" class="btn btn-primary btn-sm"
+                        style="width: 100%; max-width: 150px; border: 2px solid #007bff; margin: 20px auto; padding: 10px 20px;">
+                        Add
+                    </button>
+                </div>
+                <div class="container">
+                    <!-- Div to display number of workers and available hours -->
+                    <div id="workHoursInfo" class="work-hours-info">
+                        <p class="info-item"><strong>Number of Workers:</strong> <span id="workerCount">8</span>
+                        </p>
+                        <p class="info-item"><strong>Available Hours:</strong> <span id="availableHours">0</span></p>
+                    </div>
+
+                    <!-- Div to display total inhouse and outsource time -->
+
+                </div>
+                <style>
+                    #addButton {
+                        display: block;
+                        width: 100%;
+                        max-width: 150px;
+                        border: 2px solid #007bff;
+                        margin: 20px auto;
+                        padding: 10px 20px;
+                        background-color: #007bff;
+                        color: white;
+                        text-align: center;
+                        z-index: 1;
+                    }
+
+                    /* Container for the two divs to be aligned side by side */
+                    .container {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: 20px;
+                    }
+
+                    /* Style for the work-hours-info and total-time divs */
+                    .work-hours-info {
+                        background-color: #f8f9fa;
+                        border-radius: 10px;
+                        padding: 20px;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                        max-width: 400px;
+                        text-align: center;
+                        margin: 0 20px;
+                        /* Space between the two divs */
+                        position: relative;
+                    }
+
+                    /* Info item styling remains the same */
+                    .info-item {
+                        font-size: 1.2em;
+                        margin: 10px 0;
+                    }
+
+                    .info-item strong {
+                        color: #007bff;
+                    }
+
+                    #workerCount,
+                    #availableHours {
+                        color: #333;
+                        font-weight: bold;
+                    }
+                </style>
+
+            </div>
+            <script>
+
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    const addButton = document.getElementById("addButton");
+
+                    addButton.addEventListener("click", async function () {
+                        const tableRows = document.querySelectorAll("#tableBody tr"); // Adjust selector as needed
+                        const updates = [];
+
+                        console.log("Button clicked. Checking table rows...");
+
+                        tableRows.forEach(row => {
+                            const checkbox = row.querySelector(".rowCheckbox");
+                            const oaNumber = row.querySelector("td:nth-child(3)").textContent.trim(); // Adjust column index if needed
+                            const selected = checkbox.checked;
+                            const inhouseToggle = row.querySelector(".inhouseToggle");
+                            const inhousing = inhouseToggle.checked; // Get inhouse toggle status
+
+                            if (oaNumber) {
+                                console.log(`Row found. OA Number: ${oaNumber}, Selected: ${selected}, Inhousing: ${inhousing}`);
+                                updates.push({
+                                    oaNumber: oaNumber,
+                                    selected: selected,
+                                    inhousing: inhousing // Include inhousing status
+                                });
+                            } else {
+                                console.warn("OA Number not found for a row.");
+                            }
+                        });
+
+                        if (updates.length === 0) {
+                            console.log("No rows selected. Exiting...");
+                            return;
+                        }
+
+                        console.log("Preparing to update the following rows:", updates);
+
+                        for (const update of updates) {
+                            console.log(`Sending update for OA Number: ${update.oaNumber}, Selected: ${update.selected}, Inhousing: ${update.inhousing}`);
+                            try {
+                                const response = await fetch(`/api/planning/${update.oaNumber}`, {
+                                    method: "PUT",
+                                    headers: {
+                                        "Content-Type": "application/json"
+                                    },
+                                    body: JSON.stringify({ selected: update.selected, inhousing: update.inhousing })
+                                });
+
+                                if (response.ok) {
+                                    const result = await response.json();
+                                    console.log(`Successfully updated OA Number ${update.oaNumber}:`, result);
+                                } else {
+                                    console.error(`Failed to update OA Number ${update.oaNumber}. Status: ${response.status}`);
+                                }
+                            } catch (error) {
+                                console.error(`Error updating OA Number ${update.oaNumber}:`, error);
+                            }
+                        }
+
+                        console.log("Update process completed.");
+                    });
+                });
+
+            </script>
+        </div>
+    </div>
+    <script>
+        document.getElementById('dateRangeForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            console.log("Form submitted.");
+
+            const fromDateInput = document.getElementById('fromDate').value;
+            const toDateInput = document.getElementById('toDate').value;
+            console.log("From Date:", fromDateInput);
+            console.log("To Date:", toDateInput);
+
+            const fromDate = new Date(fromDateInput);
+            const toDate = new Date(toDateInput);
+
+            const timeDiff = toDate - fromDate;
+            const daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24)); // Convert milliseconds to days
+            console.log("Days Difference:", daysDiff);
+
+            const numberOfWorkers = 8;
+            let availableHours = numberOfWorkers * daysDiff * 8; // Calculate available hours
+
+            document.getElementById('availableHours').textContent = availableHours;
+
+            // Store available hours globally
+            window.initialAvailableHours = availableHours;
+            window.availableHours = availableHours;
+        })
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("dateRangeForm");
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Call the function to populate the table
+                fetchAndPopulateTable();
+            });
+        });
+
+        async function fetchAndPopulateTable(selectedCategory) {
+            if (selectedCategory == "New R&D") {
+                selectedCategory = "New";
+            }
+
+            try {
+                const apiUrl = selectedCategory
+                    ? `http://60.254.18.10:3002/api/filter/planning?category=${selectedCategory}`
+                    : "http://60.254.18.10:3002/api/planning";
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+
+                if (response.ok) {
+                    const tableBody = document.getElementById("tableBody");
+                    tableBody.innerHTML = ""; // Clearing the table body
+
+                    // Retrieve the date range values
+                    const fromDateInput = document.getElementById("fromDate").value;
+                    const toDateInput = document.getElementById("toDate").value;
+                    const fromDate = new Date(fromDateInput);
+                    const toDate = new Date(toDateInput);
+
+                    // Sort data.rows by del_date in ascending order
+                    data.rows.sort((a, b) => new Date(a.del_date) - new Date(b.del_date));
+
+                    let pastDueRowCount = 0;
+                    data.rows.forEach((row) => {
+                        // Skip rows where row.report_status is "DETAIL"
+                        if (row.report_status == "DETAIL") {
+                            return;
+                        }
+
+                        // Check if delivery_date falls within the date range
+                        const deliveryDate = new Date(row.del_date);
+                        if (deliveryDate < fromDate || deliveryDate > toDate) {
+                            return;
+                        }
+
+                        const tableRow = document.createElement("tr");
+
+                        // Check if the delivery_date has passed and apply the appropriate class
+                        const currentDate = new Date();
+                        formatDate(currentDate);
+
+                        let rowColorClass;
+                        tableRow.className = rowColorClass || ""; // If no past-due condition, set class to empty string
+
+                        tableRow.innerHTML = `
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                        <input type="checkbox" class="rowCheckbox">
+                    </td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                        ${formatDate(row.del_date)}
+                    </td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                        ${row.oa_number}
+                    </td>
+                  
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                        ${row.bal_qty || ""}
+                    </td>
+                  <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                    <input 
+                        type="number" 
+                        value="${row.bal_qty || ''}" 
+                        max="${row.bal_qty || ''}" 
+                        min="0" 
+                        style="width: 100%; padding: 4px;" 
+                        oninput="validateInput(this)"
+                        data-original-qty="${row.bal_qty || '0'}"
+                        data-original-time="${row.total_time_inhouse || '0'}"> 
+                     </td>
+
+
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                        <label class="switch">
+                            <input type="checkbox" class="inhouseToggle">
+                            <span class="slider"></span>
+                        </label>
+                    </td>
+                  <td class="inhouseTime" data-original-time="${row.total_time_inhouse || 0}">
+                        ${row.total_time_inhouse || 0}
+                    </td>
+                    <td class="outsourceTime" data-original-time="${row.total_time_outsource || 0}">
+                        ${row.total_time_outsource || 0}
+                    </td>
+
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" class="completionDate">
+                    </td> <!-- New cell -->
+                `;
+
+                        tableBody.appendChild(tableRow);
+
+                        // Add event listener to the inhouseToggle checkbox
+                        const inhouseToggle = tableRow.querySelector('.inhouseToggle');
+                        const inhouseTimeCell = tableRow.querySelector('.inhouseTime');
+                        const outsourceTimeCell = tableRow.querySelector('.outsourceTime');
+                        const rowCheckbox = tableRow.querySelector('.rowCheckbox');
+                        const completionDateCell = tableRow.querySelector('.completionDate');
+
+                        function updateAvailableHours(isChecked) {
+                            let timeValue = 0;
+
+                            if (inhouseToggle.checked) {
+                                const inhouseTime = parseFloat(inhouseTimeCell.textContent) || 0;
+                                console.log(`Inhouse time retrieved: ${inhouseTime}`);
+                                timeValue = inhouseTime; // Convert inhouse time to hours
+                            } else {
+                                const outsourceTime = parseFloat(outsourceTimeCell.textContent) || 0;
+                                console.log(`Outsource time retrieved: ${outsourceTime}`);
+                                timeValue = outsourceTime; // Convert outsource time to hours
+                            }
+
+                            console.log(`Time value to be used: ${timeValue}`);
+
+                            if (isChecked) {
+                                console.log(`Checkbox checked. Subtracting ${timeValue} hours from available hours.`);
+                                window.availableHours = window.initialAvailableHours - timeValue;
+                            } else {
+                                console.log(`Checkbox unchecked. Reverting to initial available hours.`);
+                                window.availableHours = window.initialAvailableHours;
+                            }
+
+                            console.log(`Updated available hours: ${window.availableHours.toFixed(2)}`);
+                            document.getElementById('availableHours').textContent = window.availableHours.toFixed(2);
+                        }
+
+                        rowCheckbox.addEventListener('change', function () {
+                            updateAvailableHours(this.checked);
+                        });
+
+                        inhouseToggle.addEventListener('change', function () {
+                            if (rowCheckbox.checked) {
+                                updateAvailableHours(true);
+                            }
+
+                            if (this.checked) {
+                                outsourceTimeCell.style.color = "gray";
+                                outsourceTimeCell.style.textDecoration = "line-through";
+                                inhouseTimeCell.style.color = "";
+                                inhouseTimeCell.style.textDecoration = "";
+                            } else {
+                                outsourceTimeCell.style.color = "";
+                                outsourceTimeCell.style.textDecoration = "";
+                                inhouseTimeCell.style.color = "gray";
+                                inhouseTimeCell.style.textDecoration = "line-through";
+                            }
+                        });
+
+                        rowCheckbox.addEventListener('change', function () {
+                            updateAvailableHours(this.checked);
+                        });
+
+                        // Set the initial state based on the data
+                        if (inhouseToggle.checked) {
+                            outsourceTimeCell.style.color = "gray";
+                            outsourceTimeCell.style.textDecoration = "line-through";
+                            inhouseTimeCell.style.color = "";
+                            inhouseTimeCell.style.textDecoration = "";
+                        } else {
+                            outsourceTimeCell.style.color = "";
+                            outsourceTimeCell.style.textDecoration = "";
+                            inhouseTimeCell.style.color = "gray";
+                            inhouseTimeCell.style.textDecoration = "line-through";
+                        }
+
+                        // Event listener for rowCheckbox to calculate total time required
+                        rowCheckbox.addEventListener('change', function () {
+                            if (this.checked) {
+                                console.log("Checkbox checked, starting calculation...");
+
+                                let totalTime = 0;
+
+                                // Check if inhouseToggle is checked
+                                if (inhouseToggle.checked) {
+                                    const inhouseTime = parseFloat(inhouseTimeCell.textContent) || 0;
+                                    console.log(`Inhouse time for OA Number ${row.oa_number}: ${inhouseTime}`);
+                                    totalTime = (inhouseTime / 60) / 8; // Calculate total time in days using inhouse time
+                                } else {
+                                    const outsourceTime = parseFloat(outsourceTimeCell.textContent) || 0;
+                                    console.log(`Outsource time for OA Number ${row.oa_number}: ${outsourceTime}`);
+                                    totalTime = (outsourceTime / 60) / 8; // Calculate total time in days using outsource time
+                                }
+
+                                console.log(`Total time required for OA Number ${row.oa_number}: ${totalTime} days`);
+
+                                let completionDate;
+
+                                if (totalTime < 1) {
+                                    // If total time is less than a day, use today's date
+                                    completionDate = new Date();
+                                    console.log(`Total time is less than one day, set to today's date.`);
+                                } else {
+                                    // Add the totalTime to the current date to get the completion date
+                                    completionDate = new Date();
+                                    completionDate.setDate(completionDate.getDate() + totalTime);
+                                    console.log(`Total time is ${totalTime} days, adding to current date.`);
+                                }
+
+                                const formattedDate = completionDate.toISOString().split("T")[0];
+                                console.log(`Formatted completion date for OA Number ${row.oa_number}: ${formattedDate}`);
+
+                                completionDateCell.textContent = formattedDate;
+
+                            } else {
+                                completionDateCell.textContent = "";
+                            }
+                        });
+                    });
+                } else {
+                    console.error('Error fetching data:', data.message);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+            calculateTotalTimes();
+
+        }
+
+
+        // Helper functions for date formatting
+        function formatDate(dateString) {
+            if (!dateString) return ""; // Return empty string for null or undefined dates
+            const date = new Date(dateString);
+            const day = date.getDate().toString().padStart(2, "0");
+            const month = (date.getMonth() + 1).toString().padStart(2, "0");
+            const year = date.getFullYear();
+            return `${day}-${month}-${year}`;
+        }
+
+        function calculateTotalTimes() {
+            let totalInhouseTime = 0;
+            let totalOutsourceTime = 0;
+
+            const tableRows = document.querySelectorAll("#tableBody tr");
+
+            tableRows.forEach((row) => {
+                const inhouseTimeCell = row.querySelector('.inhouseTime');
+                const outsourceTimeCell = row.querySelector('.outsourceTime');
+
+                const inhouseTime = parseFloat(inhouseTimeCell.textContent) || 0;
+                const outsourceTime = parseFloat(outsourceTimeCell.textContent) || 0;
+
+                totalInhouseTime += inhouseTime;
+                totalOutsourceTime += outsourceTime;
+            });
+
+            document.getElementById('totalInhouseTime').textContent = totalInhouseTime.toFixed(2);
+            document.getElementById('totalOutsourceTime').textContent = totalOutsourceTime.toFixed(2);
+        }
+
+        function updateTimeBasedOnQuantity(inputElement) {
+            // Retrieve and log new and max values
+            const newValue = parseFloat(inputElement.value) || 0;
+            const maxValue = parseFloat(inputElement.max) || 0;
+            console.log(`New Value: ${newValue}, Max Value: ${maxValue}`);
+
+            // Retrieve the closest row and log it
+            const row = inputElement.closest('tr');
+            console.log(`Row Element: `, row);
+
+            // Retrieve and log inhouse toggle status and time cells
+            const inhouseToggle = row.querySelector('.inhouseToggle');
+            const inhouseTimeCell = row.querySelector('.inhouseTime');
+            const outsourceTimeCell = row.querySelector('.outsourceTime');
+            console.log(`Inhouse Toggle Checked: ${inhouseToggle.checked}`);
+            console.log(`Inhouse Time Cell Original Value: ${inhouseTimeCell.dataset.originalTime}`);
+            console.log(`Outsource Time Cell Original Value: ${outsourceTimeCell.dataset.originalTime}`);
+
+            // Retrieve and log the original quantity
+            const originalQty = parseFloat(inputElement.dataset.originalQty) || 0;
+            console.log(`Original Quantity: ${originalQty}`);
+
+            // Prevent updates if new value exceeds max
+            if (newValue > maxValue) {
+                inputElement.value = maxValue;
+                console.log(`New value exceeds max. Setting value to max (${maxValue})`);
+                return; // Exit the function
+            }
+
+            // Calculate and log new time based on the quantity
+            let totalHours;
+            if (inhouseToggle.checked) {
+                const inhouseTime = parseFloat(inhouseTimeCell.dataset.originalTime) || 0;
+                totalHours = (newValue / originalQty) * inhouseTime;
+                inhouseTimeCell.textContent = totalHours.toFixed(2);
+                console.log(`Inhouse Time Calculated: ${totalHours.toFixed(2)}`);
+            } else {
+                const outsourceTime = parseFloat(outsourceTimeCell.dataset.originalTime) || 0;
+                totalHours = (newValue / originalQty) * outsourceTime;
+                outsourceTimeCell.textContent = totalHours.toFixed(2);
+                console.log(`Outsource Time Calculated: ${totalHours.toFixed(2)}`);
+            }
+        }
+
+        function validateInput(inputElement) {
+            console.log(`Input Element Changed:`, inputElement);
+            console.log(`Input Value: ${inputElement.value}`);
+            // Call the function to update row time based on quantity input
+            updateTimeBasedOnQuantity(inputElement);
+            calculateTotalTimes();
+        }
+
+
+
+    </script>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var form = document.querySelector("#companyRegistrationForm");
+
+            form.addEventListener("submit", function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    form.classList.add("was-validated");
+                }
+            });
+        });
+    </script>
+
+    <!--**********************************
+            Content body end
+        ***********************************-->
+    <!--**********************************
+            Footer start
+        ***********************************-->
+    <div class="footer">
+        <div class="copyright">
+            <p>
+                Copyright © Designed &amp; Developed by
+                <a href="https://kvartech.in/" target="_blank">KVAR Tech</a> 2023
+            </p>
+        </div>
+    </div>
+    <!--**********************************
+            Footer end
+        ***********************************-->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="/vendor/global/global.min.js"></script>
+    <script src="/vendor/chart.js/Chart.bundle.min.js"></script>
+    <script src="/vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+
+    <!-- Apex Chart -->
+    <script src="/vendor/apexchart/apexchart.js"></script>
+
+    <script src="/vendor/chart.js/Chart.bundle.min.js"></script>
+
+    <!-- Chart piety plugin files -->
+    <script src="/vendor/peity/jquery.peity.min.js"></script>
+    <!-- Dashboard 1 -->
+    <script src="/js/dashboard/dashboard-1.js"></script>
+
+    <script src="/vendor/owl-carousel/owl.carousel.js"></script>
+
+    <script src="/js/custom.min.js"></script>
+    <script src="/js/dlabnav-init.js"></script>
+    <script src="/js/demo.js"></script>
+    <script src="/js/styleSwitcher.js"></script>
+
+    <script src="/static/assets/plugins/jquery/dist/jquery.min.js"></script>
+    <script src="/static/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="/static/assets/plugins/tether/dist/js/tether.min.js"></script>
+    <script src="/static/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="/static/assets/plugins/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="/static/assets/plugins/classie/classie.js"></script>
+    <script src="/static/assets/plugins/notification/js/bootstrap-growl.min.js"></script>
+    <script src="/static/assets/plugins/jquery-sparkline/dist/jquery.sparkline.js"></script>
+    <script src="/static/assets/plugins/waypoints/jquery.waypoints.min.js"></script>
+    <script src="/static/assets/plugins/countdown/js/jquery.counterup.js"></script>
+    <script src="/static/assets/plugins/charts/echarts/js/echarts-all.js"></script>
+    <script src="/static/assets/plugins/todo/js/todo.js"></script>
+    <script src="/static/assets/pages/dashboard.js"></script>
+    <script src="/static/assets/js/main.min.js"></script>
+    <script src="/static/assets/js/menu.min.js"></script>
+    <script src="/static/assets/js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/index.js"></script>
+</body>
+
+</html>

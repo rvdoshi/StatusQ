@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Edit Quality - KVARTech DATABASE</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <!-- Favicon icon -->
+    <!-- <link rel="shortcut icon" href="/static/assets/images/favicon.png" type="image/x-icon"> -->
+    <!-- <link rel="icon" href="/static/assets/images/favicon.ico" type="image/x-icon"> -->
+
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet">
+
+    <!-- themify -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/icon/themify-icons/themify-icons.css">
+
+    <!-- iconfont -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/icon/icofont/css/icofont.css">
+
+    <!-- simple line icon -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/icon/simple-line-icons/css/simple-line-icons.css">
+
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/plugins/bootstrap/css/bootstrap.min.css">
+
+    <!-- Chartlist chart css -->
+    <link rel="stylesheet" href="/static/assets/plugins/chartist/dist/chartist.css" type="text/css" media="all">
+
+    <!-- Weather css -->
+    <link href="/static/assets/css/svg-weather.css" rel="stylesheet">
+
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/main.css">
+
+    <!-- Responsive.css-->
+    <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css">
+
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/responsive.css">
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/style.css">
+
+</head>
+
+<body class="sidebar-mini fixed">
+    <div class="loader-bg">
+        <div class="loader-bar"></div>
+    </div>
+    <div class="wrapper">
+        <!-- Navbar-->
+        <header class="main-header-top hidden-print">
+            <a href="/dashboard" class="logo"><img src="/static/assets/images/logo.png" alt="Theme-logo" style="width: 140px; height: 55px;"></a>
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
+                <ul class="top-nav lft-nav">
+                </ul>
+                <ul class="top-nav">
+                    <!--Notification Menu-->
+                    <!-- window screen -->
+                    <li class="pc-rheader-submenu">
+                        <a href="#!" class="drop icon-circle" onclick="javascript:toggleFullScreen()">
+                            <i class="icon-size-fullscreen"></i>
+                        </a>
+                    </li>
+                    <!-- User Menu-->
+                    <li class="dropdown">
+                        <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
+                            <span id="username-placeholder">John Doe</span> <i class="icofont icofont-simple-down"></i>
+                            <span hidden id="usernameID-placeholder">John Doe</span><i class="icofont icofont-simple-down"></i>
+                        </a>
+                        <ul class="dropdown-menu settings-menu">
+                            <li><a href="/"><i class="icon-logout"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Side-Nav-->
+        <aside class="main-sidebar hidden-print ">
+            <section class="sidebar" id="sidebar-scroll">
+                <!-- Sidebar Menu-->
+                <ul class="sidebar-menu">
+                    <li class="nav-level">--- Navigation</li>
+                    <li class="active treeview">
+                        <a class="waves-effect waves-dark" href="/dashboard">
+                            <i class="icon-speedometer"></i><span> Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="treeview">
+                        <a class="waves-effect waves-dark" href="#"><i class="icon-list"></i><span> Table</span><i
+                                class="icon-arrow-down"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a class="waves-effect waves-dark" href="/team-table"><i
+                                        class="icon-arrow-right"></i>Team
+                                    Table</a></li>
+                            <!-- <li><a class="waves-effect waves-dark" href="/management-table"><i
+                                 class="icon-arrow-right"></i>Management Table</a></li> -->
+                            <li>
+                                <a class="waves-effect waves-dark" href="#"><i></i>Quality Table <i
+                                        class="icon-arrow-down"></i></a>
+                                <ul class="treeview-menu">
+                                    <li><a class="waves-effect waves-dark" href="/quality-table/edit-quality"><i
+                                                class="icon-arrow-right"></i>Edit</a></li>
+                                    <li><a class="waves-effect waves-dark" href="/quality-table/quality-table"><i
+                                                class="icon-arrow-right"></i>View</a></li>
+                                </ul>
+                            </li>
+            </section>
+        </aside>
+        <!-- Sidebar chat start -->
+        <div class="content-wrapper">
+            <!-- Container-fluid starts -->
+            <div class="container-fluid">
+                <!-- Header Starts -->
+                <div class="row">
+                    <div class="col-sm-12 p-0">
+                        <div class="main-header">
+                            <h4>Edit Quality</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- Header end -->
+
+
+                <div class="row" style="border: 1px solid black; padding: 0% !important; padding-bottom: 0 !important; margin: 2% !important; border-radius: 5px; background-color: #ffffffa4; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);">
+                    <center>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="progressBar" style="width: 0%;"></div>
+                            <div class="step">
+                                <div class="circle" id="step1">1</div>
+                                <div class="label">Sales</div>
+                            </div>
+                            <div class="step">
+                                <div class="circle" id="step2">2</div>
+                                <div class="label">Purchase</div>
+                            </div>
+                            <div class="step">
+                                <div class="circle" id="step3">3</div>
+                                <div class="label">Stores</div>
+                            </div>
+                            <div class="step">
+                                <div class="circle" id="step4">4</div>
+                                <div class="label">R&D</div>
+                            </div>
+                            <div class="step">
+                                <div class="circle" id="step5">5</div>
+                                <div class="label">Production</div>
+                            </div>
+                            <div class="step">
+                                <div class="circle" id="step6">6</div>
+                                <div class="label">QC</div>
+                            </div>
+                            <div class="step">
+                                <div class="circle" id="step7">7</div>
+                                <div class="label">Accounts</div>
+                            </div>
+                        </div>
+                        <br>
+
+                    </center>
+                </div>
+
+                <div class="row" style="border: 1px solid black; padding: 2% !important; margin: 2% !important; border-radius: 5px; background-color: #ffffffa4; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);">
+                    <div class="col-md-3" style="margin-bottom: 1%;">
+                        <input type="text" id="searchOANumber" class="form-control" placeholder="Search OA Number..." style="width: 100%;">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" id="searchCustomerName" class="form-control" placeholder="Search Customer Name..." style="width: 100%;">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" id="searchItemCode" class="form-control" placeholder="Search Item Code..." style="width: 100%;">
+                    </div>
+                </div>
+
+                <style>
+                    .progress-container {
+                        width: 90%;
+                        display: flex;
+                        justify-content: space-between;
+                        position: relative;
+                        padding: 10px 0;
+                        align-items: flex-start;
+                    }
+                    
+                    .progress-bar {
+                        position: absolute;
+                        top: 38%;
+                        left: 0;
+                        height: 4px;
+                        background-color: #4caf50;
+                        z-index: 1;
+                        transform: translateY(-50%);
+                    }
+                    
+                    .step {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                    
+                    .circle {
+                        width: 40px;
+                        height: 40px;
+                        background-color: #4DD6C3;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+                        z-index: 2;
+                        color: white;
+                        font-weight: bold;
+                    }
+                    
+                    .circle.completed {
+                        background-color: #3A7D7A;
+                    }
+                    
+                    .label {
+                        text-align: center;
+                        margin-top: 5px;
+                        color: #555;
+                        font-size: 12px;
+                    }
+                </style>
+
+
+                <div class="row" style="border: 1px solid black; padding: 2% !important; margin: 2% !important; border-radius: 5px; background-color: #ffffffa4; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);">
+                    <div class="col-md-2">
+                        <label for="month-year-picker-F">From:</label><input type="text" id="month-year-picker-F" class="form-control" style="box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);" />
+                    </div>
+                    <div class="col-md-2">
+                        <label for="month-year-picker">To:</label><input type="text" id="month-year-picker" class="form-control" style="box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);" />
+                    </div>
+
+                    <div class="col-md-2">
+                        <label for="order-category">Order Category:</label>
+                        <select id="order-category" class="form-control custom-select" style="box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
+                            <option value="All Order Categories">All Order Categories</option>
+                            <option value="OEM">OEM</option>
+                            <option value="Repeat">Repeat</option>
+                            <option value="New R&D">New R&D</option>
+                            <option value="Maruti">Maruti</option>
+                            <option value="Regular">Regular</option>
+                            <option value="Stock">Stock</option>
+                            <option value="Related Party">Related Party</option>
+                            <option value="Export">Export</option>
+                            <option value="Service">Service</option>
+                            <option value="Demo">Demo</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="select-order">Pending Order:</label>
+                        <select id="select-order" class="form-control custom-select" style="box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
+                            <!-- Options will be loaded dynamically through API query -->
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="select-order-2">All Orders:</label>
+                        <select id="select-order-2" class="form-control custom-select" style="box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
+                            <!-- Options will be loaded dynamically through API query -->
+                        </select>
+                    </div>
+                </div>
+
+                <style>
+                    .form-control,
+                    .custom-select {
+                        border: 1px solid #007bff;
+                        border-radius: 0.25rem !important;
+                        height: 3% !important;
+                        width: 100% !important;
+                        font-size: 1.1rem;
+                    }
+                    
+                    .form-control:focus,
+                    .custom-select:focus {
+                        border-color: #0056b3;
+                        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+                    }
+                    
+                    .form-group {
+                        margin-bottom: 1% !important;
+                    }
+                    
+                    .form-control {
+                        margin-top: 1% !important;
+                    }
+                </style>
+
+                <div class="row" style="border: 1px solid black; padding: 2% !important; margin: 2% !important; border-radius: 5px; background-color: #ffffffa4; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);">
+                    <div class="col-md-3">
+                        <h4 style="text-align:center;margin-top: 8% ;">Push Status Back:</h4>
+
+                    </div>
+                    <div class="col-md-3">
+                        <label for="department">Select Department:</label>
+                        <select id="department" class="form-control custom-select" style="box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
+                            <option value="">Select Department</option>
+                            <option value="1">Sales</option>
+                            <option value="2">Purchase</option>
+                            <option value="3">Stores</option>
+                            <option value="4">R&D</option>
+                            <option value="5">Production</option>
+                            <option value="6">QC</option>
+                            <option value="7">Accounts</option>
+                        </select>
+                    </div>
+                    <style>
+                        .dropdown-custom {
+                            position: relative;
+                        }
+                        
+                        .dropdown-list-S {
+                            display: none;
+                            position: absolute;
+                            background-color: white;
+                            border: 1px solid #ccc;
+                            z-index: 1;
+                            width: 100%;
+                            max-height: 200px;
+                            overflow-y: auto;
+                        }
+                        
+                        .dropdown-list-S label {
+                            padding: 8px;
+                            display: block;
+                        }
+                        
+                        .dropdown-toggle-S {
+                            cursor: pointer;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            border: 1px solid #ccc;
+                            padding: 10px;
+                            border-radius: 4px;
+                        }
+                    </style>
+                    <div class="col-md-3 mt-3 dropdown-custom">
+                        <label for="reasons">Reasons:</label>
+                        <div id="dropdown-toggle" class="dropdown-toggle-S">
+                            <span>Select Reasons</span>
+
+                        </div>
+                        <div id="dropdown-list" class="dropdown-list-S">
+                            <!-- Options will be loaded dynamically through API query -->
+                        </div>
+                    </div>
+                    <div class="col-md-3" style="margin-top: 2% !important;">
+                        <div class="form-group text-center">
+                            <button type="button" id="sendbtn-2" class="btn btn-primary" style="font-size: 18px; padding: 10px 20px; border-radius: 5px;">
+                                Update
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                    .form-control,
+                    .custom-select {
+                        border: 1px solid #007bff;
+                        border-radius: 0.25rem !important;
+                        height: 3% !important;
+                        width: 100% !important;
+                        font-size: 1.1rem;
+                    }
+                    
+                    .form-control:focus,
+                    .custom-select:focus {
+                        border-color: #0056b3;
+                        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+                    }
+                    
+                    .form-group {
+                        margin-bottom: 1% !important;
+                    }
+                    
+                    .form-control {
+                        margin-top: 1% !important;
+                    }
+                </style>
+
+                <div class="form-group" style="text-align: center;">
+                    <div class="row" style="border: 1px solid black; padding: 2%; margin: 2%; border-radius: 5px; background-color: #ffffffa4; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);">
+                        <div class="col-md-6">
+                            <div class="form-group d-flex align-items-center">
+                                <input type="checkbox" id="specification_check" name="specification_check" style="transform: scale(1.5); margin-right: 10px;" />
+                                <label for="specification_check" style="font-size: 18px;">Specification Check</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group d-flex align-items-center">
+                                <input type="checkbox" id="oqc" name="oqc" style="transform: scale(1.5); margin-right: 10px;" />
+                                <label for="oqc" style="font-size: 18px;">QC</label>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input type="text" id="notes" name="notes" class="form-control" style="width: 100%;" placeholder="Notes" />
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group text-center">
+                                <button type="button" id="sendbtn" class="btn btn-primary" style="font-size: 18px; padding: 10px 20px; border-radius: 5px;">
+                                    Send
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Container-fluid ends -->
+                </div>
+            </div>
+
+
+            <!-- Required Jquery -->
+            <script src="/static/assets/plugins/jquery/dist/jquery.min.js"></script>
+            <script src="/static/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+            <script src="/static/assets/plugins/tether/dist/js/tether.min.js"></script>
+            <script src="/static/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+            <script src="/static/assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+            <script src="/static/assets/plugins/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+            <script src="/static/assets/plugins/classie/classie.js"></script>
+            <script src="/static/assets/plugins/notification/js/bootstrap-growl.min.js"></script>
+            <script src="/static/assets/plugins/jquery-sparkline/dist/jquery.sparkline.js"></script>
+            <script src="/static/assets/plugins/waypoints/jquery.waypoints.min.js"></script>
+            <script src="/static/assets/plugins/countdown/js/jquery.counterup.js"></script>
+            <script src="/static/assets/plugins/charts/echarts/js/echarts-all.js"></script>
+            <script src="/static/assets/plugins/todo/js/todo.js"></script>
+            <script src="/static/assets/pages/dashboard.js"></script>
+            <script src="/static/assets/js/main.min.js"></script>
+            <script src="/static/assets/js/menu.min.js"></script>
+            <script src="/static/assets/js/custom.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+            <!-- Flatpickr JS -->
+            <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+            <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/index.js"></script>
+            <script src="/static/edit-quality.js"></script>
+
+
+</body>
+
+</html>

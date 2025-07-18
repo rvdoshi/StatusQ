@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Management - KVARTech DATABASE</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <!-- Favicon icon -->
+    <!-- <link rel="shortcut icon" href="/static/assets/images/favicon.png" type="image/x-icon"> -->
+    <!-- <link rel="icon" href="/static/assets/images/favicon.ico" type="image/x-icon"> -->
+
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet">
+
+    <!-- themify -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/icon/themify-icons/themify-icons.css">
+
+    <!-- iconfont -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/icon/icofont/css/icofont.css">
+
+    <!-- simple line icon -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/icon/simple-line-icons/css/simple-line-icons.css">
+
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/plugins/bootstrap/css/bootstrap.min.css">
+
+    <!-- Chartlist chart css -->
+    <link rel="stylesheet" href="/static/assets/plugins/chartist/dist/chartist.css" type="text/css" media="all">
+
+    <!-- Weather css -->
+    <link href="/static/assets/css/svg-weather.css" rel="stylesheet">
+
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/main.css">
+
+    <!-- Responsive.css-->
+    <link rel="stylesheet" type="text/css" href="/assets/css/responsive.css">
+
+    <link rel="stylesheet" type="text/css" href="/static/assets/css/responsive.css">
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/gantt-style.css">
+</head>
+
+
+
+<body class="sidebar-mini fixed">
+    <div class="loader-bg">
+        <div class="loader-bar"></div>
+    </div>
+    <div class="wrapper">
+        <!-- Navbar-->
+        <header class="main-header-top hidden-print">
+            <a href="/dashboard" class="logo"><img src="/static/assets/images/logo.png" alt="Theme-logo"
+                    style="width: 140px; height: 55px;"></a>
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#" data-toggle="offcanvas" class="sidebar-toggle"></a>
+                <ul class="top-nav">
+                    <!-- User Menu-->
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+                            class="dropdown-toggle drop icon-circle drop-image">
+                            <span id="username-placeholder">John Doe</span><i class="icofont icofont-simple-down"></i>
+                        </a>
+                        <ul class="dropdown-menu settings-menu">
+                            <li><a href="/"><i class="icon-logout"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Side-Nav-->
+        <aside class="main-sidebar hidden-print">
+            <section class="sidebar" id="sidebar-scroll">
+                <!-- Sidebar Menu-->
+                <ul class="sidebar-menu">
+                    <li class="nav-level">--- Navigation</li>
+                    <li class="active treeview">
+                        <a class="waves-effect waves-dark" href="/dashboard">
+                            <i class="icon-speedometer"></i><span> Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="treeview">
+                        <a class="waves-effect waves-dark" href="#"><i class="icon-list"></i><span> Table</span><i
+                                class="icon-arrow-down"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a class="waves-effect waves-dark" href="/team-table"><i
+                                        class="icon-arrow-right"></i>Team Table</a></li>
+                            <li>
+                                <a class="waves-effect waves-dark" href="#"><i></i>Management <i
+                                        class="icon-arrow-right"></i></a>
+                                <ul class="treeview-menu">
+                                    <li><a class="waves-effect waves-dark" href="/management"><i
+                                                class="icon-arrow-right"></i>Edit</a></li>
+                                    <li><a class="waves-effect waves-dark" href="/gnatt"><i
+                                                class="icon-arrow-right"></i>View</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </aside>
+        <div class="content-wrapper">
+            <!-- Container-fluid starts -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12 p-0">
+                        <div class="main-header">
+                            <h4>Management</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gantt Chart Section -->
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>Gantt Chart</h5>
+                            </div>
+                            <div class="card-body">
+                                <!-- Search Bar Section -->
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <input type="text" id="search-bar" class="form-control"
+                                                placeholder="Search">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="gantt-chart-container">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>OA number</th>
+                                                <th>Sales</th>
+                                                <th>Purchase</th>
+                                                <th>R&D</th>
+                                                <th>Production</th>
+                                                <th>Stores</th>
+                                                <th>QC</th>
+                                                <th>Accounts</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="gantt-chart-body">
+                                            <!-- Dynamic Content Will Be Inserted Here -->
+                                        </tbody>
+                                    </table>
+                                    <div id="pagination-controls" style="margin-top: 10px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Container-fluid ends -->
+        </div>
+    </div>
+
+    <!-- Required Jquery -->
+    <script src="/static/assets/plugins/jquery/dist/jquery.min.js"></script>
+    <script src="/static/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="/static/assets/plugins/tether/dist/js/tether.min.js"></script>
+    <script src="/static/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="/static/assets/plugins/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="/static/assets/plugins/classie/classie.js"></script>
+    <script src="/static/assets/plugins/notification/js/bootstrap-growl.min.js"></script>
+    <script src="/static/assets/plugins/jquery-sparkline/dist/jquery.sparkline.js"></script>
+    <script src="/static/assets/plugins/waypoints/jquery.waypoints.min.js"></script>
+    <script src="/static/assets/plugins/countdown/js/jquery.counterup.js"></script>
+    <script src="/static/assets/plugins/charts/echarts/js/echarts-all.js"></script>
+    <script src="/static/assets/plugins/todo/js/todo.js"></script>
+    <script src="/static/assets/pages/dashboard.js"></script>
+    <script src="/static/assets/js/main.min.js"></script>
+    <script src="/static/assets/js/menu.min.js"></script>
+    <script src="/static/assets/js/custom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/monthSelect/index.js"></script>
+    <script src="/static/management-script.js"></script>
+    <script src="/static/index-script.js"></script>
+    <script src="/static/table-script.js"></script>
+    <script src="/static/gantt-script.js"></script>
+    <script src="/static/assets/js/menu.min.js"></script>
+
+    <script>
+
+
+            $.ajax({
+                url: '/api/user',
+                method: 'GET',
+                success: function (data) {
+                    // console.log('AJAX request successful:', data.name);
+                    $('#username-placeholder').text(data.name);
+                },
+                error: function (err) {
+                    console.log('Error fetching user data:', err);
+                }
+            });
+      
+
+    </script>
+</body>
+
+</html>

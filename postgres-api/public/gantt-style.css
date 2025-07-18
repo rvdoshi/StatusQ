@@ -1,0 +1,160 @@
+.table {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    overflow: auto; /* Add overflow property for the scrollbar */
+    border-collapse: collapse; /* Ensure table borders are consistent */
+}
+
+.table th, .table td {
+    text-align: left;
+    padding: 0.5rem; /* Adjust padding for better spacing */
+    vertical-align: middle;
+    border: 1px solid #000000;
+    font-size: 12px;
+    word-wrap: break-word; /* Allow content to wrap within cells */
+}
+
+.table th {
+    background-color: #88b048; /* Green header background */
+    color: #ffffff; /* White text for better contrast */
+    position: sticky; /* Make header sticky */
+    top: 0; /* Stick to the top of the container */
+    z-index: 10; /* Ensure headers are above other elements */
+    padding: 0.7rem; /* Add padding for better spacing */
+    white-space: normal; /* Allow headers to wrap content */
+    text-align: left; /* Align header text to the left */
+}
+
+.table td {
+    background-color: #ffffff; /* Ensure a white background for cells */
+    min-height: 50px;
+    max-height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal; /* Allow content to wrap in data cells */
+}
+
+.table thead th {
+    border-bottom: 2px solid #000000; /* Stronger border for the header */
+    position: sticky; /* Make header sticky */
+    top: 0; /* Stick to the top of the container */
+    z-index: 10; /* Ensure headers are above other elements */
+}
+
+.table tbody {
+    border-top: 2px solid #eceeef;
+}
+
+.table tbody+tbody {
+    border-top: 2px solid #000000;
+}
+
+#teamDataTable {
+    width: 100%; /* Adjust to occupy full width */
+    overflow: auto;
+}
+
+#teamDataTable thead {
+    white-space: normal; /* Allow header text to wrap */
+    background-color: #88b048; /* Match table header background */
+    color: #ffffff;
+    position: sticky; /* Sticky header */
+    top: 0;
+    z-index: 1; /* Ensure it stays above table rows */
+    border-bottom: 2px solid #000000; /* Strong bottom border */
+}
+
+#teamDataTable th {
+    min-height: 50px;
+    max-height: auto; /* Allow flexible height for wrapped content */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal; /* Allow wrapping */
+    padding: 0.7rem; /* Better spacing */
+}
+
+#teamDataTable td {
+    min-height: 50px;
+    max-height: auto;
+    white-space: normal; /* Allow wrapping */
+    padding: 0.5rem;
+}
+
+.orderCategory {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background-color: #f9f9f9;
+    white-space: normal; /* Allow wrapping in the category column */
+    min-width: 120px;
+    padding: 8px;
+    text-align: center;
+}
+
+.delay-row {
+    color: red;
+}
+
+/* Add alternate row shading for better readability */
+.table tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* Ensure the last column's right border is strong */
+.table th:last-child, .table td:last-child {
+    border-right: 2px solid #000000;
+}
+
+td[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    z-index: 1000;
+    white-space: nowrap;
+    transform: translateY(-100%);
+}
+
+#pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#pagination-controls button {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: 1px solid #4CAF50;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#pagination-controls button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+#pagination-controls button:disabled {
+    background-color: #d3d3d3; /* Gray background when disabled */
+    cursor: not-allowed;
+}
+
+#pagination-controls span {
+    font-size: 14px;
+    font-weight: bold;
+}
+

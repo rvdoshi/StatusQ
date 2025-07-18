@@ -1,0 +1,340 @@
+<!--LIVE FILE IN USE-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Team Table</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Quantum Able Bootstrap 4 Admin Dashboard Template by codedthemes">
+    <meta name="keywords" content="appestia, Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+    <meta name="author" content="codedthemes">
+
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- themify -->
+    <link rel="stylesheet" type="text/css" href="/static/icon/themify-icons/themify-icons.css">
+
+    <!-- iconfont -->
+    <link rel="stylesheet" type="text/css" href="/static/icon/icofont/css/icofont.css">
+
+    <!-- simple line icon -->
+    <link rel="stylesheet" type="text/css" href="/static/icon/simple-line-icons/css/simple-line-icons.css">
+
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href="/static/plugins/bootstrap/css/bootstrap.min.css">
+
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+
+    <!-- Responsive.css-->
+    <link rel="stylesheet" type="text/css" href="/static/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="/static/team-style.css">
+</head>
+
+<body class="sidebar-mini fixed">
+    <div class="wrapper">
+        <div class="loader-bg">
+            <div class="loader-bar"></div>
+        </div>
+        <a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
+        <div class="navbar-custom-menu">
+            <ul class="top-nav">
+            </ul>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 p-0">
+                    <div class="main-header d-flex justify-content-between align-items-center p-3 mb-3 bg-light border rounded">
+                        <div class="d-flex">
+                            <ol class="breadcrumb breadcrumb-title breadcrumb-arrow mb-0">
+                                <li class="breadcrumb-item">
+                                    <a href="/dashboard">
+                                        <i class="icofont icofont-home"></i>
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item active"><a href="/team-table">Basic Table</a></li>
+                            </ol>
+                            <button id="exportButton" class="btn btn-success ml-3" style="margin-left: 90%; margin-bottom: 1%;">Export to Excel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+
+            <script>
+                document.getElementById('exportButton').addEventListener('click', function() {
+                    const table = document.querySelector('table');
+                    const wb = XLSX.utils.table_to_book(table, {
+                        sheet: "Sheet1"
+                    });
+                    XLSX.writeFile(wb, 'team-table.xlsx');
+                });
+            </script>
+
+
+            <div style="border: 1px solid rgb(0, 0, 0); margin-bottom: 1% !important; padding: 1% !important;">
+                <div class="row mb-3">
+                    <div class="col d-flex justify-content-end align-items-center">
+                        <div class="col-md-6" style="margin-bottom: 1%;">
+                            <label for="fromDate" class="">From OA-DATE:</label>
+                            <input type="date" id="fromDate" class="form-control me-3" style="width: 100%;">
+                        </div>
+                        <div class="col-md-6" style="margin-bottom: 1%;">
+                            <label for="toDate" class="">To OA-DATE:</label>
+                            <input type="date" id="toDate" class="form-control" style="width: 100%;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3" style="margin-bottom: 1%;">
+                        <input type="text" id="searchOANumber" class="form-control" placeholder="Search OA Number..." style="width: 100%;">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" id="searchCustomerName" class="form-control" placeholder="Search Customer Name..." style="width: 100%;">
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" id="searchItemCode" class="form-control" placeholder="Search Item Code..." style="width: 100%;">
+                    </div>
+                    <div class="col-md-3">
+                        <select id="orderCategoryFilter" class="form-control" style="width: 100%;">
+                            <option value="All Order Categories">All Order Categories</option>
+                            <option value="OEM">OEM</option>
+                            <option value="Repeat">Repeat</option>
+                            <option value="New R&D">New R&D</option>
+                            <option value="Maruti">Maruti</option>
+                            <option value="Regular">Regular</option>
+                            <option value="Stock">Stock</option>
+                            <option value="Related Party">Related Party</option>
+                            <option value="Export">Export</option>
+                            <option value="Service">Service</option>
+                            <option value="Demo">Demo</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <style>
+                
+            </style>
+            <div class="row">
+                <div class="teamDataTableContainer">
+                    <table class="table" id="teamDataTable">
+                        <thead>
+                            <!-- <tr>
+                                <th class="headers-blank" colspan="9"></th>
+                                <th class="headers-visible" colspan="2">Sales</th> 
+                                <th class="headers-visible" colspan="3">Purchase</th>
+                                <th class="headers-visible" colspan="2">R&D</th>
+                                <th class="headers-visible" colspan="3">Production</th>
+                                <th class="headers-visible" colspan="1">QC</th>
+                                <th class="headers-visible" colspan="2">Stores</th>
+                                <th class="headers-visible" colspan="2">Accounts</th>
+                            </tr> -->
+                            <tr>
+                                <th>OA Number</th>
+                                <th>OA Date</th>
+                                <th>Cust.Name</th>
+                                <th>Item Code</th>
+                                <th>Qty</th>
+                                <th>Dc.Qty</th>
+                                <th>Bal.Qty</th>
+                                <th>Bal.Amt</th>
+                                <th>Del.Date</th>
+                                <th>Late.Cl <button class="hide-column-btn" onclick="hideColumn(9)"><i class="fa fa-eye-slash"></i></button></th>
+                                <th>Mail <button class="hide-column-btn" onclick="hideColumn(10)"><i class="fa fa-eye-slash"></i></button></th>
+                                <th>Material Shortage</th>
+                                <th>Material PriceHike</th>
+                                <th>Mat.Rcpt.ETA</th>
+                                <th>Spec.Ch</th>
+                                <th>Finished</th>
+                                <th>Assembly</th>
+                                <th>F.Tstng</th>
+                                <th>QC</th>
+                                <th>OQC</th>
+                                <th>Packing</th>
+                                <th>Delivery</th>
+                                <th>Adv.Rec</th>
+                                <th>Invoicing</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody"></tbody>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Required jQuery -->
+
+    <script src="/static/assets/plugins/jquery/dist/jquery.min.js"></script>
+    <script src="/static/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="/static/assets/plugins/tether/dist/js/tether.min.js"></script>
+    <!-- search -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="/static/assets/js/search.js"></script>
+
+    <!-- Required Fremwork -->
+    <script src="/static/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- waves effects.js -->
+    <script src="/static/assets/plugins/Waves/waves.min.js"></script>
+
+    <!-- Scrollbar JS -->
+    <script src="/static/assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="/static/assets/plugins/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+
+    <!-- classic JS -->
+    <script src="/static/assets/plugins/classie/classie.js"></script>
+
+    <!-- notification -->
+    <script src="/static/assets/plugins/notification/js/bootstrap-growl.min.js"></script>
+
+    <!-- custom js -->
+    <script type="text/javascript" src="/static/assets/js/main.min.js"></script>
+    <script type="text/javascript" src="/static/assets/pages/elements.js"></script>
+    <script src="/static/assets/js/menu.min.js"></script>
+    <script src="/static/table-script.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Helper function to parse date in 'YYYY-MM-DD' format
+            function parseDate(dateString) {
+                var parts = dateString.split('-');
+                return new Date(parts[0], parts[1] - 1, parts[2]);
+            }
+
+            // Filter based on search inputs
+            $('#searchOANumber, #searchCustomerName, #searchItemCode').on('input', function() {
+                var searchOANumber = $('#searchOANumber').val().toLowerCase();
+                var searchCustomerName = $('#searchCustomerName').val().toLowerCase();
+                var searchItemCode = $('#searchItemCode').val().toLowerCase();
+                $('#teamDataTable tbody tr').filter(function() {
+                    var textOANumber = $(this).find('td:eq(0)').text().toLowerCase();
+                    var textCustomerName = $(this).find('td:eq(2)').text().toLowerCase();
+                    var textItemCode = $(this).find('td:eq(3)').text().toLowerCase();
+                    $(this).toggle(
+                        textOANumber.includes(searchOANumber) &&
+                        textCustomerName.includes(searchCustomerName) &&
+                        textItemCode.includes(searchItemCode)
+                    );
+                });
+            });
+
+            // Filter by Order Category
+            $('#orderCategoryFilter').on('change', function() {
+                var selectedCategory = $(this).val();
+                $('#teamDataTable tbody tr').filter(function() {
+                    var textCategory = $(this).find('td:eq(7)').text();
+                    $(this).toggle(selectedCategory === 'All Order Categories' || textCategory === selectedCategory);
+                });
+            });
+
+            // Date filter (From and To Date) for "OA Date" column
+            $('#fromDate, #toDate').on('change', function() {
+                var fromDate = $('#fromDate').val();
+                console.log("From Date: ", fromDate);
+                var toDate = $('#toDate').val();
+                console.log("To Date: ", toDate);
+
+                if (fromDate && toDate) {
+                    var from = parseDate(fromDate); // From date in YYYY-MM-DD
+                    var to = parseDate(toDate); // To date in YYYY-MM-DD
+
+                    $('#teamDataTable tbody tr').each(function() {
+                        var oaDate = $(this).find('td:eq(1)').text().trim();
+                        console.log("OA Date: ", oaDate);
+
+                        // Convert "OA Date" string from DD-MM-YYYY to a Date object
+                        var oaDateParsed = parseDate(oaDate, "DD-MM-YYYY"); // Specify the format
+
+                        // Show rows within the selected date range
+                        $(this).toggle(oaDateParsed >= from && oaDateParsed <= to);
+                    });
+                } else {
+                    // Show all rows if date range not selected
+                    $('#teamDataTable tbody tr').show();
+                }
+            });
+
+            // Updated parseDate function to handle the different date formats
+            function parseDate(dateString, format = "YYYY-MM-DD") {
+                var parts;
+
+                if (format === "DD-MM-YYYY") {
+                    // Split date string (DD-MM-YYYY)
+                    parts = dateString.split('-');
+                    // Return date in format YYYY-MM-DD for comparison
+                    return new Date(parts[2], parts[1] - 1, parts[0]);
+                } else {
+                    // Default format is YYYY-MM-DD
+                    parts = dateString.split('-');
+                    return new Date(parts[0], parts[1] - 1, parts[2]);
+                }
+            }
+
+            // Delivery Date filter and sorting
+            $('#delDateFilter').on('change', function() {
+                var selectedOption = $(this).val();
+                var rows = $('#teamDataTable tbody tr').get();
+                rows.sort(function(a, b) {
+                    var dateA = parseDate($(a).find('td:eq(8)').text());
+                    var dateB = parseDate($(b).find('td:eq(8)').text());
+                    if (selectedOption === 'Ascending') {
+                        return dateA - dateB;
+                    } else if (selectedOption === 'Descending') {
+                        return dateB - dateA;
+                    } else if (selectedOption === 'Current Date') {
+                        var currentDate = new Date().toDateString();
+                        return dateA.toDateString() === currentDate ? -1 : 1;
+                    }
+                });
+                $.each(rows, function(index, row) {
+                    $('#teamDataTable tbody').append(row);
+                });
+            });
+
+            // Sorting by OA Number (Descending)
+            $('#teamDataTable th:eq(0)').on('click', function() {
+                var rows = $('#teamDataTable tbody tr').get();
+                rows.sort(function(a, b) {
+                    var oaNumberA = $(a).find('td:eq(0)').text().trim();
+                    var oaNumberB = $(b).find('td:eq(0)').text().trim();
+
+                    // Compare OA Numbers as strings, sorting them in descending order
+                    if (oaNumberA < oaNumberB) return 1;
+                    if (oaNumberA > oaNumberB) return -1;
+                    return 0;
+                });
+                $.each(rows, function(index, row) {
+                    $('#teamDataTable tbody').append(row);
+                });
+            });
+        });
+
+        // Hide columns
+        function hideColumn(columnIndex) {
+            var table = document.getElementById("teamDataTable");
+            for (var i = 0; i < table.rows.length; i++) {
+                table.rows[i].cells[columnIndex].style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

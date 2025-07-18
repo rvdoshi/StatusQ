@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <title>KVARTech DATABASE - PURCHASE DATA</title>
+
+   <!-- Meta -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="description" content="Quantum Able Bootstrap 4 Admin Dashboard Template by codedthemes">
+   <meta name="keywords"
+      content="appestia, Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+   <meta name="author" content="codedthemes">
+
+   <!-- Favicon icon -->
+   <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+   <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+   <!-- Google font-->
+   <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,700" rel="stylesheet">
+
+   <!-- themify -->
+   <link rel="stylesheet" type="text/css" href="/static/icon/themify-icons/themify-icons.css">
+
+   <!-- iconfont -->
+   <link rel="stylesheet" type="text/css" href="/static/icon/icofont/css/icofont.css">
+
+   <!-- simple line icon -->
+   <link rel="stylesheet" type="text/css" href="/static/icon/simple-line-icons/css/simple-line-icons.css">
+
+   <!-- Required Fremwork -->
+   <link rel="stylesheet" type="text/css" href="/static/plugins/bootstrap/css/bootstrap.min.css">
+
+   <!-- Style.css -->
+   <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+
+   <!-- Responsive.css-->
+   <link rel="stylesheet" type="text/css" href="/static/css/responsive.css">
+
+   <link rel="stylesheet" type="text/css" href="/static/stores-style.css">
+
+</head>
+
+<body class="sidebar-mini fixed">
+   <div class="wrapper">
+      <div class="loader-bg">
+         <div class="loader-bar">
+         </div>
+      </div>
+      <!-- Navbar-->
+      <!-- Sidebar toggle button-->
+      <a href="#!" data-toggle="offcanvas" class="sidebar-toggle"></a>
+      <!-- Navbar Right Menu-->
+      <div class="navbar-custom-menu">
+         <ul class="top-nav">
+            <!-- window screen -->
+            <!-- search end -->
+      </div>
+      </nav>
+      </header>
+      <!-- Container-fluid starts -->
+      <div class="container-fluid">
+         <!-- Header Starts -->
+         <div class="row">
+            <div class="col-sm-12 p-0">
+               <div class="main-header">
+                  <ol class="breadcrumb breadcrumb-title breadcrumb-arrow">
+                     <li class="breadcrumb-item">
+                        <a href="/dashboard">
+                           <i class="icofont icofont-home"></i>
+                        </a>
+                     </li>
+                     <li class="breadcrumb-item"><a href="/team-table">Basic Table</a>
+                     </li>
+                  </ol>
+                  <button id="exportButton" class="btn btn-success ml-3"
+                     style="margin-left: 90%; margin-bottom: 1%;">Export to Excel</button>
+               </div>
+            </div>
+         </div>
+
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+
+         <script>
+            document.getElementById('exportButton').addEventListener('click', function () {
+               const table = document.querySelector('table');
+               const wb = XLSX.utils.table_to_book(table, { sheet: "Sheet1" });
+               XLSX.writeFile(wb, 'table.xlsx');
+            });
+         </script>
+         <!-- Header end -->
+         <!-- Tables start -->
+         <!--Search-->
+         <div style="border: 1px solid black; margin-bottom: 1% !important; padding: 1% !important;">
+
+            <div class="row mb-3">
+               <div class="col d-flex justify-content-end align-items-center">
+                  <div class="col-md-6" style="margin-bottom: 1%;">
+                     <input type="text" id="searchInput" class="form-control" placeholder="Search..."
+                        style="width: 100%;">
+                  </div>
+                  <div class="col-md-6" style="margin-bottom: 1%;">
+                     <select id="orderCategoryFilter" class="form-control" style="width: 100%;">
+                        <option value="All Order Categories">All Order Categories</option>
+                        <option value="OEM">OEM</option>
+                        <option value="Repeat">Repeat</option>
+                        <option value="New R&D">New R&D</option>
+                        <option value="Maruti">Maruti</option>
+                        <option value="Regular">Regular</option>
+                        <option value="Stock">Stock</option>
+                        <option value="Related Party">Related Party</option>
+                        <option value="Export">Export</option>
+                        <option value="Service">Service</option>
+                        <option value="Demo">Demo</option>
+                     </select>
+                  </div>
+               </div>
+            </div>
+            <div class="row mb-3">
+               <div class="col d-flex justify-content-end align-items-center">
+                  <div class="col-md-6" style="margin-bottom: 1%;">
+                     <label for="fromDate" class="">From:</label>
+                     <input type="date" id="fromDate" class="form-control me-3" style="width: 100%;">
+                  </div>
+                  <div class="col-md-6" style="margin-bottom: 1%;">
+                     <label for="toDate" class="">To:</label>
+                     <input type="date" id="toDate" class="form-control" style="width: 100%;">
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="teamDataTableContainer">
+            <table class="table" id="teamDataTable">
+               <thead>
+                  <tr>
+                     <th>OA Number</th>
+                     <th>OA Date</th>
+                     <th>Customer Name</th>
+                     <th>Item Code</th>
+                     <th>Order Qty</th>
+                     <th>Bal Qty</th>
+                     <th>Delivery Date</th>
+                     <th>Stock Check</th>
+                     <th>MiP</th>
+                     <th>Packing</th>
+                     <th>Delivery</th>
+                     <th>Notes</th>
+                  </tr>
+               </thead>
+               <tbody id="tableBody">
+                  <!-- Table rows will be dynamically added here -->
+               </tbody>
+            </table>
+         </div>
+
+         <script src="/static/store-script.js"></script>
+
+         <!-- Required Jqurey -->
+         <script src="/static/assets/plugins/jquery/dist/jquery.min.js"></script>
+         <script src="/static/assets/plugins/jquery-ui/jquery-ui.min.js"></script>
+         <script src="/static/assets/plugins/tether/dist/js/tether.min.js"></script>
+
+         <!-- search-->
+         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+         <script src="/static/assets/js/search.js"></script>
+
+         <!-- Required Fremwork -->
+         <script src="/static/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+         <!-- waves effects.js -->
+         <script src="/static/assets/plugins/Waves/waves.min.js"></script>
+
+         <!-- Scrollbar JS-->
+         <script src="/static/assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+         <script src="/static/assets/plugins/jquery.nicescroll/jquery.nicescroll.min.js"></script>
+
+         <!--classic JS-->
+         <script src="/static/assets/plugins/classie/classie.js"></script>
+
+         <!-- notification -->
+         <script src="/static/assets/plugins/notification/js/bootstrap-growl.min.js"></script>
+
+         <!-- custom js -->
+         <script type="text/javascript" src="/static/assets/js/main.min.js"></script>
+         <script type="text/javascript" src="/static/assets/pages/elements.js"></script>
+         <script src="/static/assets/js/menu.min.js"></script>
+
+         <script>
+            // Date filter (From and To Date) for "OA Date" column
+            $('#fromDate, #toDate').on('change', function () {
+               var fromDate = $('#fromDate').val();
+               console.log("From Date: ", fromDate);
+               var toDate = $('#toDate').val();
+               console.log("To Date: ", toDate);
+
+               if (fromDate && toDate) {
+                  var from = parseDate(fromDate);  // From date in YYYY-MM-DD
+                  var to = parseDate(toDate);      // To date in YYYY-MM-DD
+
+                  $('#teamDataTable tbody tr').each(function () {
+                     var oaDate = $(this).find('td:eq(1)').text().trim();
+                     console.log("OA Date: ", oaDate);
+
+                     // Convert "OA Date" string from DD-MM-YYYY to a Date object
+                     var oaDateParsed = parseDate(oaDate, "DD-MM-YYYY");  // Specify the format
+
+                     // Show rows within the selected date range
+                     $(this).toggle(oaDateParsed >= from && oaDateParsed <= to);
+                  });
+               } else {
+                  // Show all rows if date range not selected
+                  $('#teamDataTable tbody tr').show();
+               }
+            });
+
+            // Updated parseDate function to handle the different date formats
+            function parseDate(dateString, format = "YYYY-MM-DD") {
+               var parts;
+
+               if (format === "DD-MM-YYYY") {
+                  // Split date string (DD-MM-YYYY)
+                  parts = dateString.split('-');
+                  // Return date in format YYYY-MM-DD for comparison
+                  return new Date(parts[2], parts[1] - 1, parts[0]);
+               } else {
+                  // Default format is YYYY-MM-DD
+                  parts = dateString.split('-');
+                  return new Date(parts[0], parts[1] - 1, parts[2]);
+               }
+            }
+         </script>
+
+</body>
+
+</html>
